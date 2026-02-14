@@ -7,9 +7,9 @@ Welcome to the **GeoPython Tutorial**. This comprehensive learning resource is v
 
 Before diving into maps, we master the core tools that power modern data science.
 
-* [![NumPy](https://numpy.org/images/logo.svg){ width="100" }](https://numpy.org/) **NumPy** ("The Math Engine"): Python lists are slow for millions of numbers. NumPy makes math instant. It handles the heavy lifting for all other data packages.
-* [![Pandas](https://pandas.pydata.org/static/img/pandas.svg){ width="100" }](https://pandas.pydata.org/) **Pandas** ("The Super Spreadsheet"): Imagine Excel, but programmable and capable of handling millions of rows in seconds. Pandas lets you filter, sort, and analyze tabular data with ease.
-* [![Matplotlib](https://matplotlib.org/stable/_static/logo2.svg){ width="100" }](https://matplotlib.org/) **Matplotlib & Seaborn** ("The Artists"): These libraries turn your numbers into visual stories—line charts, bar graphs, heatmaps, and more.
+* <a href="https://numpy.org/" target="_blank"><img src="https://numpy.org/images/logo.svg" width="100" alt="NumPy" style="vertical-align: middle; margin-right: 10px;"></a> **NumPy** ("The Math Engine"): Python lists are slow for millions of numbers. NumPy makes math instant. It handles the heavy lifting for all other data packages.
+* <a href="https://pandas.pydata.org/" target="_blank"><img src="https://pandas.pydata.org/static/img/pandas.svg" width="100" alt="Pandas" style="vertical-align: middle; margin-right: 10px;"></a> **Pandas** ("The Super Spreadsheet"): Imagine Excel, but programmable and capable of handling millions of rows in seconds. Pandas lets you filter, sort, and analyze tabular data with ease.
+* <a href="https://matplotlib.org/" target="_blank"><img src="https://matplotlib.org/stable/_static/logo2.svg" width="100" alt="Matplotlib" style="vertical-align: middle; margin-right: 10px;"></a> **Matplotlib & Seaborn** ("The Artists"): These libraries turn your numbers into visual stories—line charts, bar graphs, heatmaps, and more.
 
 ## Applied Geospatial Modules
 

@@ -3689,6 +3689,3 @@ gdf_Dams.to_file(Output_fp_Dams)
 
     using Python
 
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
