@@ -23,7 +23,7 @@
     
     
       
-        <title>Geospatial Analysis Working with Raster Data - GeoPython Tutorial</title>
+        <title>Geospatial Analysis Working with Raster Data - Geo Coding Muscle with Python</title>
       
     
     
@@ -88,7 +88,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="GeoPython Tutorial" class="md-header__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+    <a href=".." title="Geo Coding Muscle with Python" class="md-header__button md-logo" aria-label="Geo Coding Muscle with Python" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GeoPython Tutorial
+            Geo Coding Muscle with Python
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -318,13 +318,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="GeoPython Tutorial" class="md-nav__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+    <a href=".." title="Geo Coding Muscle with Python" class="md-nav__button md-logo" aria-label="Geo Coding Muscle with Python" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    GeoPython Tutorial
+    Geo Coding Muscle with Python
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1532,111 +1532,6 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3JHdxtNQbv8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <h2 id="lecture-visualization">Lecture Visualization</h2>
-<p><embed src="pdfs/Geospatial python Raster-slides.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" /></p>
-<p align="center"><a href="pdfs/Geospatial python Raster-slides.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
-
-<details class="info">
-<summary>View Full Lecture Transcript</summary>
-<p>The following content is extracted from the lecture slides.</p>
-<p>I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N</p>
-<p>Geospatial Analysis using Python</p>
-<p>-</p>
-<p>Working with Raster Data</p>
-<p>Prasun Kumar Gupta</p>
-<p>Scientist/Engineer-'SE', Geoinformatics Department</p>
-<p>Geospatial Technology and Outreach Program Group</p>
-<p>Indian Institute of Remote Sensing (ISRO), Dehradun</p>
-<p>prasun@iirs.gov.in</p>
-<p>9/22/2022 1</p>
-<p>Geospatial Analysis using Python</p>
-<p>• Contemporary proprietary software have limited traditional</p>
-<p>functionalities; Not suited for process modeling</p>
-<p>• Convergence of artificial intelligence, big data, internet of</p>
-<p>things and geospatial sciences leads to demand for new</p>
-<p>tools, currently not present in conventional software</p>
-<p>• Unthinkable to progress in geospatial research without</p>
-<p>automation</p>
-<p>• Big data processing is impossible on standalone systems</p>
-<p>using conventional remote sensing (RS) and GIS softwares</p>
-<p>• Large number of libraries supporting RS&amp;GIS in Python</p>
-<p>Python Geospatial Ecosystem</p>
-<p>Popular Python Geospatial Libraries</p>
-<p>Vector based Raster based</p>
-<p>OGR GDAL</p>
-<p>Fiona Rasterio</p>
-<p>pyshp or shapefile OpenCV</p>
-<p>Geopandas rasterstats</p>
-<p>Shapely scikit-image</p>
-<p>PySAL PIL / Pillow</p>
-<p>Packages linked with other software</p>
-<p>grass.pygrass, pyqgis, arcpy, googlemaps, earthengine</p>
-<p>All are well maintained and documented. Each is meant for a specific purpose.</p>
-<p>GDAL / OGR</p>
-<p>-</p>
-<p>History</p>
-<p>• Launched in late 1998 by Frank Warmerdam</p>
-<p>• Core Team: Even Rouault, Howard Butler,</p>
-<p>Markus Neteler, and many more.</p>
-<p>• URL: www.gdal.org</p>
-<p>• Software using GDAL (MIT license)</p>
-<p>• Nearly 112 listed on the website1 (58 free; 53 paid)</p>
-<p>• Includes all popular software like ArcGIS, QGIS, Google</p>
-<p>Earth, GRASS GIS, IDRISI, ILWIS, SAGA,</p>
-<p>SkylineGlobe, Geoserver etc.</p>
-<p>1 https://gdal.org/software_using_gdal</p>
-<p>What is GDAL?</p>
-<p>• GDAL is a translator library for raster and vector</p>
-<p>geospatial data formats.</p>
-<p>• X/MIT style Open Source License by OSGEO.</p>
-<p>• As a library, it presents a single raster abstract data</p>
-<p>model and single vector abstract data model to the calling</p>
-<p>application for all supported formats.</p>
-<p>• It also comes with a variety of useful command line</p>
-<p>utilities for data translation and processing.</p>
-<p>• Written in C/C++; “Wrapped” for use with Python, Perl, VB,</p>
-<p>C#, R, Java …</p>
-<p>Why GDAL?</p>
-<p>• Supports all known GIS file formats</p>
-<p>• Supported raster formats (159 drivers2):</p>
-<p>• Erdas Imagine .img, GeoTIFF, netCDF, HDF</p>
-<p>• OGC Web services: WCS, WMS, WMTS</p>
-<p>• ECW, MrSID</p>
-<p>• JPEG, JPEG2000, PNG, GIF, BMP</p>
-<p>• September 2022 GDAL/OGR 3.5.2 release.</p>
-<p>2 https://gdal.org/drivers/raster/index.html</p>
-<p>GDAL Command Line Utilities</p>
-<p>• gdalinfo: Lists information about a raster dataset.</p>
-<p>• gdal_translate: Converts raster data between different formats.</p>
-<p>• gdalwarp: Image reprojection and warping utility.</p>
-<p>• gdal_contour: Builds vector contour lines from a DEM.</p>
-<p>• gdaldem: Tools to analyze and visualize DEMs.</p>
-<p>• gdal_rasterize: Burns vector geometries into a raster.</p>
-<p>• gdal_grid: Creates regular grid from the scattered data.</p>
-<p>• gdal_proximity.py: Produces a raster proximity map.</p>
-<p>• gdal_polygonize.py: Produces a polygon layer from a raster.</p>
-<p>• gdal_calc.py: Command line raster calculator with numpy syntax.</p>
-<p>and more …</p>
-<p>Installing GDAL using Anaconda Navigator</p>
-<p>(Preferred method)</p>
-<p>Installing GDAL using Anaconda Prompt</p>
-<p>Environment name</p>
-<p>Packages to be</p>
-<p>installed</p>
-<p>• Once the shown command is run, it will create a new</p>
-<p>virtual environment called “geo” containing the specified</p>
-<p>packages (GDAL and Geopandas)</p>
-<p>• Dependencies (such as Numpy, Pandas etc.) will also get</p>
-<p>automatically installed</p>
-<p>Books</p>
-<p>I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N</p>
-<p>prasun@iirs.gov.in</p>
-<p>Q A</p>
-<p>Time for some hands-on</p>
-<p>using Python</p>
-</details>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3JHdxtNQbv8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<h2 id="lecture-visualization_1">Lecture Visualization</h2>
 <p><embed src="pdfs/Geospatial python Raster-slides.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" /></p>
 <p align="center"><a href="pdfs/Geospatial python Raster-slides.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
 
