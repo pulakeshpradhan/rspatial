@@ -77,33 +77,45 @@ def setup_mkdocs():
         subprocess.run(cmd, check=True)
 
     # 6. Generate mkdocs.yml with navigation
+    # 6. Generate mkdocs.yml with navigation
     nav = [{'Home': 'index.md'}]
+    
+    # Material icons for sections
+    icons = {
+        "Python Fundamentals": ":material-language-python:",
+        "Data Science Core": ":material-chart-bar:",
+        "Time Series Analysis": ":material-clock-outline:",
+        "Geospatial Analysis & Cloud": ":material-map-outline:",
+        "Miscellaneous": ":material-folder-outline:"
+    }
     
     for section, file_bases in structure.items():
         section_nav = []
         for base in file_bases:
-            # Check if file actually exists (some might be missing or renamed)
             if base + '.ipynb' in all_files:
                 title = base.replace('_', ' ').replace('-', ' ')
-                # Remove leading numbers for cleaner titles (optional, user pref?)
-                # keeping numbers helps ordering logic if relevant
                 section_nav.append({title: base + '.md'})
         
         if section_nav:
-            nav.append({section: section_nav})
+            section_title = f"{icons.get(section, '')} {section}"
+            nav.append({section_title: section_nav})
 
     mkdocs_config = {
-        'site_name': 'Geo Coding Muscle with Python',
+        'site_name': 'Coding Muscle with GeoPython',
         'theme': {
             'name': 'material',
             'features': [
                 'navigation.tabs',
                 'navigation.sections',
+                'navigation.top',
+                'search.suggest',
+                'search.highlight',
+                'content.code.copy',
                 'toc.integrate'
             ],
             'palette': [
-                {'scheme': 'default', 'primary': 'teal', 'accent': 'purple'},
-                {'scheme': 'slate', 'primary': 'teal', 'accent': 'lime'}
+                {'scheme': 'default', 'primary': 'blue-grey', 'accent': 'teal'},
+                {'scheme': 'slate', 'primary': 'blue-grey', 'accent': 'teal'}
             ]
         },
         'nav': nav,
@@ -111,7 +123,9 @@ def setup_mkdocs():
         'markdown_extensions': [
             'admonition',
             'pymdownx.details',
-            'pymdownx.superfences'
+            'pymdownx.superfences',
+            'pymdownx.emoji',
+            {'pymdownx.emoji': {'emoji_index': '!!python/name:pymdownx.emoji.twemoji', 'emoji_generator': '!!python/name:pymdownx.emoji.to_svg'}}
         ]
     }
 
