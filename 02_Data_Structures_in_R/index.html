@@ -9,24 +9,28 @@
       
       
       
+        <link rel="prev" href="../01_Basic_Data_types/">
+      
+      
+        <link rel="next" href="../03_Functions_Loops_Controlflow/">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Coding Muscle with R Geospatial</title>
+        <title>02 Data Structures in R - Coding Muscle with R Geospatial</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#data-structures-in-r" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +88,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Coding Muscle with R Geospatial" class="md-header__button md-logo" aria-label="Coding Muscle with R Geospatial" data-md-component="logo">
+    <a href=".." title="Coding Muscle with R Geospatial" class="md-header__button md-logo" aria-label="Coding Muscle with R Geospatial" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              02 Data Structures in R
             
           </span>
         </div>
@@ -192,7 +201,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -209,11 +218,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/01_Basic_Data_types/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01_Basic_Data_types/" class="md-tabs__link">
           
   
   
@@ -233,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/09_Working_with_Matrices_Vectors/" class="md-tabs__link">
+        <a href="../09_Working_with_Matrices_Vectors/" class="md-tabs__link">
           
   
   
@@ -253,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/10_Time_Series_Analysis_Part_I/" class="md-tabs__link">
+        <a href="../10_Time_Series_Analysis_Part_I/" class="md-tabs__link">
           
   
   
@@ -273,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/07_Geospatial_Analysis_Vector_Data/" class="md-tabs__link">
+        <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-tabs__link">
           
   
   
@@ -309,7 +320,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Coding Muscle with R Geospatial" class="md-nav__button md-logo" aria-label="Coding Muscle with R Geospatial" data-md-component="logo">
+    <a href=".." title="Coding Muscle with R Geospatial" class="md-nav__button md-logo" aria-label="Coding Muscle with R Geospatial" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -327,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -351,26 +362,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -388,7 +404,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -406,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/01_Basic_Data_types/" class="md-nav__link">
+      <a href="../01_Basic_Data_types/" class="md-nav__link">
         
   
   
@@ -431,10 +447,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/02_Data_Structures_in_R/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Data Structures in R
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -450,6 +493,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Frames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Factors
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -462,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/03_Functions_Loops_Controlflow/" class="md-nav__link">
+      <a href="../03_Functions_Loops_Controlflow/" class="md-nav__link">
         
   
   
@@ -490,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/04_OOP_Error_and_File_handling/" class="md-nav__link">
+      <a href="../04_OOP_Error_and_File_handling/" class="md-nav__link">
         
   
   
@@ -577,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/09_Working_with_Matrices_Vectors/" class="md-nav__link">
+      <a href="../09_Working_with_Matrices_Vectors/" class="md-nav__link">
         
   
   
@@ -605,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/05_Working_with_Tidyverse_Part_I/" class="md-nav__link">
+      <a href="../05_Working_with_Tidyverse_Part_I/" class="md-nav__link">
         
   
   
@@ -633,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/06_Working_with_Tidyverse_Part_II/" class="md-nav__link">
+      <a href="../06_Working_with_Tidyverse_Part_II/" class="md-nav__link">
         
   
   
@@ -661,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data_Visualization_using_ggplot2/" class="md-nav__link">
+      <a href="../Data_Visualization_using_ggplot2/" class="md-nav__link">
         
   
   
@@ -689,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Web_Scraping_web_Table/" class="md-nav__link">
+      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
         
   
   
@@ -776,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/10_Time_Series_Analysis_Part_I/" class="md-nav__link">
+      <a href="../10_Time_Series_Analysis_Part_I/" class="md-nav__link">
         
   
   
@@ -804,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/11_Time_Series_Analysis_Part_II/" class="md-nav__link">
+      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
         
   
   
@@ -891,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
         
   
   
@@ -919,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
+      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
         
   
   
@@ -947,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OpenWeatherMapAPI/" class="md-nav__link">
+      <a href="../OpenWeatherMapAPI/" class="md-nav__link">
         
   
   
@@ -975,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Open_Meteo_WEB_API/" class="md-nav__link">
+      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
         
   
   
@@ -1003,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
+      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
         
   
   
@@ -1031,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Prediction/" class="md-nav__link">
+      <a href="../Prediction/" class="md-nav__link">
         
   
   
@@ -1072,8 +1190,58 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="data-structures-in-r">Data Structures in R</h1>
+<h2 id="vectors">Vectors</h2>
+<p>Vectors are the most basic data structure in R. They must contain elements of the same type.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Atomic vector</span>
+<span class="n">rain</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">rain</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Tue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Wed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Thu&quot;</span><span class="p">)</span>
+<span class="n">rain</span>
+</code></pre></div>
+<h2 id="lists">Lists</h2>
+<p>Lists can contain elements of different types, including other lists.</p>
+<div class="highlight"><pre><span></span><code><span class="n">station_info</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
+<span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Pune&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">18.52</span><span class="p">,</span><span class="w"> </span><span class="m">73.85</span><span class="p">),</span>
+<span class="w">  </span><span class="n">active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
+<span class="p">)</span>
+<span class="n">station_info</span><span class="o">$</span><span class="n">name</span>
+</code></pre></div>
+<h2 id="data-frames">Data Frames</h2>
+<p>Data frames are the standard for tabular data in R. They are like a list of vectors of equal length.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">  </span><span class="n">station</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Pune&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mumbai&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Delhi&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="n">rainfall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">250</span><span class="p">,</span><span class="w"> </span><span class="m">80</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="matrices">Matrices</h2>
+<p>Matrices are two-dimensional arrays where all elements must be of the same type.</p>
+<div class="highlight"><pre><span></span><code><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="c1"># Row 1, Col 2</span>
+</code></pre></div>
+<h2 id="factors">Factors</h2>
+<p>Factors are used to represent categorical data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">land_use</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Urban&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Forest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Water&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Urban&quot;</span><span class="p">))</span>
+<span class="nf">levels</span><span class="p">(</span><span class="n">land_use</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1116,10 +1284,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

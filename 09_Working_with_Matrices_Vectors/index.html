@@ -12,7 +12,7 @@
         <link rel="prev" href="../04_OOP_Error_and_File_handling/">
       
       
-        <link rel="next" href="../05_Working_with_Pandas_Part_I/">
+        <link rel="next" href="../05_Working_with_Tidyverse_Part_I/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>09 Working with Numpy - Geo Coding Muscle with Python</title>
+        <title>09 Working with Matrices & Vectors - Coding Muscle with R Geospatial</title>
       
     
     
@@ -65,7 +65,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -88,7 +88,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Geo Coding Muscle with Python" class="md-header__button md-logo" aria-label="Geo Coding Muscle with Python" data-md-component="logo">
+    <a href=".." title="Coding Muscle with R Geospatial" class="md-header__button md-logo" aria-label="Coding Muscle with R Geospatial" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,13 +102,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Geo Coding Muscle with Python
+            Coding Muscle with R Geospatial
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              09 Working with Numpy
+              09 Working with Matrices & Vectors
             
           </span>
         </div>
@@ -121,13 +121,13 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="light-blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
     
   
 </form>
@@ -162,6 +162,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -224,7 +226,7 @@
           
   
   
-  Python Fundamentals
+  :material-language-r: R Fundamentals
 
         </a>
       </li>
@@ -246,7 +248,7 @@
           
   
   
-  Data Science Core
+  :material-chart-bar: Data Science Core
 
         </a>
       </li>
@@ -266,7 +268,7 @@
           
   
   
-  Time Series Analysis
+  :material-clock-outline: Time Series Analysis
 
         </a>
       </li>
@@ -286,7 +288,7 @@
           
   
   
-  Geospatial Analysis & Cloud
+  :material-map-outline: Geospatial Analysis & Cloud
 
         </a>
       </li>
@@ -318,13 +320,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Geo Coding Muscle with Python" class="md-nav__button md-logo" aria-label="Geo Coding Muscle with Python" data-md-component="logo">
+    <a href=".." title="Coding Muscle with R Geospatial" class="md-nav__button md-logo" aria-label="Coding Muscle with R Geospatial" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Geo Coding Muscle with Python
+    Coding Muscle with R Geospatial
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -386,7 +388,7 @@
   <span class="md-ellipsis">
     
   
-    Python Fundamentals
+    :material-language-r: R Fundamentals
   
 
     
@@ -402,7 +404,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Python Fundamentals
+    :material-language-r: R Fundamentals
   
 
           </label>
@@ -443,14 +445,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_Data_Structures_in_Python/" class="md-nav__link">
+      <a href="../02_Data_Structures_in_R/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    02 Data Structures in Python
+    02 Data Structures in R
   
 
     
@@ -562,7 +564,7 @@
   <span class="md-ellipsis">
     
   
-    Data Science Core
+    :material-chart-bar: Data Science Core
   
 
     
@@ -578,7 +580,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Data Science Core
+    :material-chart-bar: Data Science Core
   
 
           </label>
@@ -605,7 +607,7 @@
   <span class="md-ellipsis">
     
   
-    09 Working with Numpy
+    09 Working with Matrices & Vectors
   
 
     
@@ -623,7 +625,7 @@
   <span class="md-ellipsis">
     
   
-    09 Working with Numpy
+    09 Working with Matrices & Vectors
   
 
     
@@ -668,17 +670,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#lecture-visualization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Visualization
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -695,14 +686,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_Working_with_Pandas_Part_I/" class="md-nav__link">
+      <a href="../05_Working_with_Tidyverse_Part_I/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    05 Working with Pandas Part I
+    05 Working with Tidyverse Part I
   
 
     
@@ -723,14 +714,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_Working_with_Pandas_Part_II/" class="md-nav__link">
+      <a href="../06_Working_with_Tidyverse_Part_II/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    06 Working with Pandas Part II
+    06 Working with Tidyverse Part II
   
 
     
@@ -751,14 +742,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Data_Visualization_using_Python/" class="md-nav__link">
+      <a href="../Data_Visualization_using_ggplot2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data Visualization using Python
+    Data Visualization using ggplot2
   
 
     
@@ -837,7 +828,7 @@
   <span class="md-ellipsis">
     
   
-    Time Series Analysis
+    :material-clock-outline: Time Series Analysis
   
 
     
@@ -853,7 +844,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Time Series Analysis
+    :material-clock-outline: Time Series Analysis
   
 
           </label>
@@ -952,7 +943,7 @@
   <span class="md-ellipsis">
     
   
-    Geospatial Analysis & Cloud
+    :material-map-outline: Geospatial Analysis & Cloud
   
 
     
@@ -968,7 +959,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Geospatial Analysis & Cloud
+    :material-map-outline: Geospatial Analysis & Cloud
   
 
           </label>
@@ -1166,8 +1157,9 @@
 
 
 
-  <h1>09 Working with Numpy</h1>
+  <h1>09 Working with Matrices & Vectors</h1>
 
+<p><a href="https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/09_Working_with_Numpy.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <h2 id="numpy-module">Numpy Module</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </code></pre></div>
@@ -1936,7 +1928,7 @@ show(source, with_bounds=True, contour=False, contour_label_kws=None, ax=None, t
 </code></pre>
 <div class="highlight"><pre><span></span><code><span class="n">show</span><span class="p">(</span><span class="n">elevations</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" src="../09_Working_with_Numpy_files/09_Working_with_Numpy_113_0.png" /></p>
+<p><img alt="png" src="09_Working_with_Numpy_files/09_Working_with_Numpy_113_0.png" /></p>
 <pre><code>&lt;AxesSubplot:&gt;
 </code></pre>
 <div class="highlight"><pre><span></span><code><span class="c1">#rasterio.plot.show_hist() method for plotting of histogram of raster data file</span>
@@ -1944,67 +1936,9 @@ show(source, with_bounds=True, contour=False, contour_label_kws=None, ax=None, t
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">show_hist</span><span class="p">(</span><span class="n">elevations</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" src="../09_Working_with_Numpy_files/09_Working_with_Numpy_115_0.png" /></p>
+<p><img alt="png" src="09_Working_with_Numpy_files/09_Working_with_Numpy_115_0.png" /></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QMkQ_MgmkMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<h2 id="lecture-visualization">Lecture Visualization</h2>
-<p><embed src="pdfs/Session10_Working with Numpy.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" /></p>
-<p align="center"><a href="pdfs/Session10_Working with Numpy.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
-
-<details class="info">
-<summary>View Full Lecture Transcript</summary>
-<p>The following content is extracted from the lecture slides.</p>
-<p>Introduction to</p>
-<p>Numpy</p>
-<p>Chaitanya K S</p>
-<p>Deputy Director</p>
-<p>National Water Academy</p>
-<p>Central Water Commission, Pune</p>
-<p>Raster Data</p>
-<p>• Hydrological parameters vary  spatially in a continuous manner and</p>
-<p>therefore better represented in raster data format.</p>
-<p>• Raster datasets are stored as numerical arrays of rows and columns</p>
-<p>(2D arrays) with each pixel representing space and the value of the</p>
-<p>parameter</p>
-<p>• Multispectral data – multiple arrays of same size called bands. A</p>
-<p>collection of bands becomes a 3D array</p>
-<p>• While for vector data it is enough to know spatial reference system,</p>
-<p>for raster data, pixel size, coordinates of origin and the amount by</p>
-<p>which the dataset is rotated are needed to determine the rest of</p>
-<p>the coordinates</p>
-<p>Source: ‘Geoprocessing with Python’ by Chris Garrard</p>
-<p>Numpy Module</p>
-<p>• Numpy is an open-source fundamental package for scientific</p>
-<p>computing with Python</p>
-<p>https://numpy.org/</p>
-<p>• NumPy lies at the core of a rich ecosystem of data science libraries.</p>
-<p>• A typical exploratory data science workflow might look like:</p>
-<p>•Extract, Transform, Load: Pandas, Intake, PyJanitor</p>
-<p>•Exploratory analysis: Jupyter, Seaborn, Matplotlib, Altair</p>
-<p>•Model and evaluate: scikit-learn, statsmodels, PyMC3, spaCy</p>
-<p>•Report in a dashboard: Dash, Panel, Voila</p>
-<p>Numpy Module</p>
-<p>• Numpy is designed for processing large arrays of data – useful for</p>
-<p>handling raster datasets</p>
-<p>• At its core is the ndarray object which encapsulates n-</p>
-<p>dimensional arrays of homogeneous data types, with many</p>
-<p>operations being performed in compiled code for performance.</p>
-<p>• NumPy arrays Vs standard Python sequences:</p>
-<p>▪ They have a fixed size at creation</p>
-<p>▪ Elements in a them are to be of the same data type</p>
-<p>▪ They facilitate advanced mathematical and other types of operations on</p>
-<p>large numbers of data</p>
-<p>▪ A growing plethora of scientific and mathematical Python-based packages</p>
-<p>are using them</p>
-<p>▪ With them code is more concise and easier to read and resembles</p>
-<p>standard mathematical notation</p>
-<p>▪ Without vectorization, code would be littered with inefficient and difficult</p>
-<p>to read for loops</p>
-<p>https://numpy.org/doc/stable/user/whatisnumpy.html#.</p>
-<p>Thank you</p>
-</details>
 
 
 
@@ -2024,6 +1958,12 @@ show(source, with_bounds=True, contour=False, contour_label_kws=None, ax=None, t
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -2054,7 +1994,7 @@ show(source, with_bounds=True, contour=False, contour_label_kws=None, ax=None, t
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
