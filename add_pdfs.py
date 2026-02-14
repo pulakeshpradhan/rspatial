@@ -2,21 +2,53 @@
 import os
 import shutil
 import difflib
+import re
 from pypdf import PdfReader
 
 def normalize(s):
     return s.lower().replace('_', ' ').replace('-', ' ').replace('.md', '').replace('.pdf', '')
 
+def clean_text_chunk(text):
+    # Remove common headers/footers patterns
+    # e.g. "22-09-2022", single digits on a line (page numbers)
+    lines = text.split('\n')
+    cleaned_lines = []
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        # Skip likely page numbers (just digits)
+        if line.isdigit() and len(line) < 4:
+            continue
+            
+        # Skip date-like strings (simple check)
+        if re.match(r'\d{2}-\d{2}-\d{4}', line):
+            continue
+            
+        cleaned_lines.append(line)
+        
+    return "\n".join(cleaned_lines)
+
 def extract_text_from_pdf(pdf_path):
     try:
         reader = PdfReader(pdf_path)
-        text = ""
-        for i, page in enumerate(reader.pages):
+        full_text = []
+        
+        for page in reader.pages:
             page_text = page.extract_text()
             if page_text:
-                text += f"\n\n**Slide {i+1}**\n\n"
-                text += page_text
-        return text
+                cleaned = clean_text_chunk(page_text)
+                full_text.append(cleaned)
+        
+        # Join all pages with double indentation
+        combined_text = "\n\n".join(full_text)
+        
+        # Basic cleanup of broken sentences?
+        # This is risky without advanced NLP, so let's stick to clean paragraphs.
+        
+        return combined_text
     except Exception as e:
         print(f"Error reading {pdf_path}: {e}")
         return ""
@@ -82,23 +114,29 @@ def add_pdfs():
             extracted_text = extract_text_from_pdf(pdf_path)
             
             # Prepare content to append
-            # Use embed for PDF viewing
-            append_content = f"\n\n## Lecture Slides & Notes\n\n"
+            # Continuous flow, professional look
             
-            append_content += f'<embed src="pdfs/{best_pdf}" type="application/pdf" width="100%" height="600px" />\n\n'
+            append_content = f"\n\n## Lecture Visualization\n\n"
             
-            append_content += f"[Download Slides PDF](pdfs/{best_pdf}){{ .md-button .md-button--primary }}\n\n"
+            # Embed PDF
+            append_content += f'<embed src="pdfs/{best_pdf}" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />\n\n'
+            
+            # Download Button centered or aligned
+            append_content += f'<p align="center"><a href="pdfs/{best_pdf}" class="md-button md-button--primary">Download Lecture Slides</a></p>\n\n'
             
             if extracted_text:
-                append_content += "### Searchable Slide Text\n"
-                append_content += "!!! example \"Extracted Data\"\n"
-                append_content += "    The following text is automatically extracted from the slides to facilitate searching.\n\n"
-                append_content += "    <div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>\n"
-                # Simple markdown to text conversion or just raw text
-                # We replace newlines with two spaces for markdown line breaks inside the div? 
-                # actually pure text is fine.
-                append_content += extracted_text.replace('\n', '  \n') 
-                append_content += "\n    </div>"
+                # Use a collapsible details block for the full text to keep page clean
+                append_content += "??? info \"View Full Lecture Transcript\"\n"
+                append_content += "    The following content is extracted from the lecture slides.\n\n"
+                
+                # Format text as a continuous block
+                # Split by newlines and reconstruct to look more like paragraphs
+                # We need consistent indentation for the admonition block (4 spaces)
+                
+                lines = extracted_text.split('\n')
+                for line in lines:
+                    if line.strip():
+                        append_content += f"    {line.strip()}\n\n"
             
             with open(os.path.join('docs', md_file), 'a', encoding='utf-8') as f:
                 f.write(append_content)
