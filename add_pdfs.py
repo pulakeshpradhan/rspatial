@@ -14,7 +14,7 @@ def extract_text_from_pdf(pdf_path):
         for i, page in enumerate(reader.pages):
             page_text = page.extract_text()
             if page_text:
-                text += f"\n\n### Slide {i+1}\n\n"
+                text += f"\n\n**Slide {i+1}**\n\n"
                 text += page_text
         return text
     except Exception as e:
@@ -82,14 +82,23 @@ def add_pdfs():
             extracted_text = extract_text_from_pdf(pdf_path)
             
             # Prepare content to append
-            append_content = f"\n\n## Lecture Slides Reference\n\n"
-            append_content += f"[Download Slides PDF](pdfs/{best_pdf}){{ .md-button }}\n\n"
+            # Use embed for PDF viewing
+            append_content = f"\n\n## Lecture Slides & Notes\n\n"
+            
+            append_content += f'<embed src="pdfs/{best_pdf}" type="application/pdf" width="100%" height="600px" />\n\n'
+            
+            append_content += f"[Download Slides PDF](pdfs/{best_pdf}){{ .md-button .md-button--primary }}\n\n"
             
             if extracted_text:
-                append_content += "### Extracted Slide Content\n"
-                append_content += "!!! note \"Note: Text automatically extracted from slides\"\n"
-                append_content += "    The following text is extracted from the presentation slides and may require formatting adjustments.\n\n"
-                append_content += extracted_text
+                append_content += "### Searchable Slide Text\n"
+                append_content += "!!! example \"Extracted Data\"\n"
+                append_content += "    The following text is automatically extracted from the slides to facilitate searching.\n\n"
+                append_content += "    <div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>\n"
+                # Simple markdown to text conversion or just raw text
+                # We replace newlines with two spaces for markdown line breaks inside the div? 
+                # actually pure text is fine.
+                append_content += extracted_text.replace('\n', '  \n') 
+                append_content += "\n    </div>"
             
             with open(os.path.join('docs', md_file), 'a', encoding='utf-8') as f:
                 f.write(append_content)

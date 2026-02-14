@@ -1,0 +1,78 @@
+
+:root {
+  --md-text-font: "Inter", sans-serif;
+  --md-code-font: "JetBrains Mono", monospace;
+  --md-primary-fg-color: #00796b; /* Teal 700 */
+  --md-accent-fg-color: #004d40; /* Teal 900 */
+}
+
+/* General Improvements */
+body {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headers */
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--md-primary-fg-color);
+}
+
+h2 {
+  font-weight: 700;
+  margin-top: 2em; 
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #eee;
+}
+
+/* Frames (Videos & PDFs) */
+iframe, embed, object {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 1.5em 0;
+  width: 100%;
+  border: none;
+}
+
+/* Buttons */
+.md-button {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.md-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Admonitions */
+.md-typeset .admonition, 
+.md-typeset details {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.md-typeset .admonition-title, 
+.md-typeset summary {
+  background-color: rgba(0, 121, 107, 0.05) !important;
+  font-weight: 600;
+}
+
+/* Table styling */
+.md-typeset table:not([class]) {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.md-typeset table:not([class]) th {
+    background-color: var(--md-primary-fg-color);
+    color: white;
+}

@@ -975,3 +975,69 @@ g != h
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iDWyJcB1FMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+## Lecture Slides & Notes
+
+<embed src="pdfs/Session2_Basic Data Types in Python.pdf" type="application/pdf" width="100%" height="600px" />
+
+[Download Slides PDF](pdfs/Session2_Basic Data Types in Python.pdf){ .md-button .md-button--primary }
+
+### Searchable Slide Text
+!!! example "Extracted Data"
+    The following text is automatically extracted from the slides to facilitate searching.
+
+    <div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
+  
+  
+**Slide 1**  
+  
+Jupyter  
+ Notebooks &  
+Basic Data Types in   
+Python  
+Chaitanya K S  
+Deputy Director  
+National Water Academy  
+Central Water Commission, Pune  
+  
+  
+**Slide 2**  
+  
+Anaconda Navigator  
+• Anaconda Navigator is a desktop graphical user interface (GUI) included in   
+Anaconda® distribution that allows you to launch applications and easily   
+manage conda packages, environments, and channels without using command-  
+line commands.  
+https://docs.anaconda.com/anaconda/navigator/  
+• On Windows, the installer will create a Start menu shortcut for Navigator.   
+• Or from the start menu, search for and open Anaconda prompt and type the   
+command anaconda-navigator  
+  
+  
+**Slide 3**  
+  
+IPython and Jupyter Notebook  
+• Python Interpreter executes one line at a time  
+• Script files saved with .py extension can be executed by them calling in Python   
+interpreter  
+• Python Interpreter can’t cater to data analysis and scientific computing  
+• IPython project was initiated in 2001 to enhance the utility of Python Interpreter   
+• Additional features in Ipython include tab autocompletion, get help etc.,  
+• Jupyter Notebook evolved from Ipython web note book  
+• The Jupyter Notebook is a web application for creating and sharing documents   
+that contain code, visualizations, and text.  
+▪ Language of choice  
+▪ Share notebooks  
+▪ Interactive output                                           
+▪ Big data integration  
+• JupyterLab is a web-based interactive development environment for notebooks,   
+code, and data. Its flexible interface allows users to configure and arrange   
+workflows in data science, scientific computing, computational journalism, and   
+machine learning.  
+https://jupyter .org/  
+  
+**Slide 4**  
+  
+Thank you
+    </div>

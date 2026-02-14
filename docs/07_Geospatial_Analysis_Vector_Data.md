@@ -3539,28 +3539,102 @@ gdf_Dams.to_file(Output_fp_Dams)
 ```
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Lecture Slides & Notes
 
+<embed src="pdfs/Cloud based Geospatial Data Processing.pdf" type="application/pdf" width="100%" height="600px" />
 
-## Lecture Slides
+[Download Slides PDF](pdfs/Cloud based Geospatial Data Processing.pdf){ .md-button .md-button--primary }
 
-[Download Geospatial python Raster-slides.pdf](pdfs/Geospatial python Raster-slides.pdf)
+### Searchable Slide Text
+!!! example "Extracted Data"
+    The following text is automatically extracted from the slides to facilitate searching.
 
+    <div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
+  
+  
+**Slide 1**  
+  
+10/13/2025  
+1  
+I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N  
+Cloud based Geospatial Data   
+Processing in Python  
+Prasun Kumar Gupta  
+Scientist/Engineer-'SF', Geoinformatics Department  
+Geospatial Technology and Outreach Program Group  
+Indian Institute of Remote Sensing (ISRO), Dehradun  
+prasun@iirs.gov.in  
+10/13/2025 1  
+Introduction  
+• STAC, COG (Cloud Optimized GeoTIFF), and Xarray are three  
+technologies that work together in a powerful workflow for handling and  
+analyzing geospatial data.  
+Montero et al., 2024  
+  
+**Slide 2**  
+  
+10/13/2025  
+2  
+STAC  
+• Started in 2018, rapidly developing  
+• New de facto metadata and search standard  
+• May become an OGC standard in the future.  
+• Describes datasets at the level of individual files.  
+• It is most commonly used for remote sensing  
+data, but it is suitable for any data with time and  
+location information.  
+• Users: ESA, USGS, Microsoft Planetary  
+computer, Google Earth Engine, FMI and CSC  
+https://www.stacindex.org/  
+Cloud  
+-  
+Optimized   
+GeoTiff  
+ (COG)  
+• COG is a regular GeoTIFF file, aimed at being  
+hosted on a HTTP file server, with an internal  
+organization that enables more efficient  
+workflows on the cloud.  
+• It does this by leveraging the ability of clients  
+issuing ​HTTP GET range requests to ask for just  
+the parts of a file they need.  
+• Enables partial loading of data  
+• Only loads data for a specific area  
+• Generalized version of the data is available  
+element84.com  
+  
+**Slide 3**  
+  
+10/13/2025  
+3  
+Xarray  
+• Introduces labels in the form of dimensions, coordinates, and attributes on top  
+of raw NumPy-like arrays, which allows for more intuitive, more concise, and  
+less error-prone user experience.  
+• Includes a large and growing library of domain-agnostic functions for advanced  
+analytics and visualization with these data structures.  
+xarray.dev  
+How do they work together?  
+• A STAC catalog provides links to individual COG files.  
+• A library like pystac reads the STAC catalog to find the relevant   
+COGs for a specific area and time.  
+• Instead of downloading the full COG, these libraries use the STAC   
+metadata and the COG's structure to read only the necessary parts.  
+• This data is then loaded into an Xarray DataArray, ready for   
+analysis. This process is often done lazily, meaning the data is not   
+actually loaded until you perform an operation on it.  
+• Once the data is in an Xarray object, you can easily filter it, perform   
+calculations, and create composites without manually handling all   
+the file merging.  
+  
+**Slide 4**  
+  
+10/13/2025  
+4  
+I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N  
+prasun@iirs.gov.in  
+Q A  
+Time for some hands-on   
+using Python  
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-## Lecture Slides
-
-[Download Geospatial python Raster-slides.pdf](pdfs/Geospatial python Raster-slides.pdf)
-
-
-## Lecture Slides
-
-[Download Geospatial python Raster-slides.pdf](pdfs/Geospatial python Raster-slides.pdf)
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>

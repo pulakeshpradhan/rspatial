@@ -1370,3 +1370,47 @@ Rainfall_of_Cities.items()
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XtHkTYjH27U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+## Lecture Slides & Notes
+
+<embed src="pdfs/Session3_Data Structures in Python.pdf" type="application/pdf" width="100%" height="600px" />
+
+[Download Slides PDF](pdfs/Session3_Data Structures in Python.pdf){ .md-button .md-button--primary }
+
+### Searchable Slide Text
+!!! example "Extracted Data"
+    The following text is automatically extracted from the slides to facilitate searching.
+
+    <div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
+  
+  
+**Slide 1**  
+  
+Data Structures   
+in Python  
+Chaitanya K S  
+Deputy Director  
+National Water Academy  
+Central Water Commission, Pune  
+  
+  
+**Slide 2**  
+  
+Data Structures in Python  
+• Data Structures are meant to efficiently store, organize and access   
+the data  
+• Individual items of data stored in Data Structures are of basic Data   
+Types  
+• Built in Data Structures in Python   
+▪ Tuples  
+▪ Lists  
+▪ Sets  
+▪ Dictionaries  
+• What Data Structure to chose for storing, organizing and accessing   
+the data depends on the type of data and the problem at hand  
+  
+**Slide 3**  
+  
+Thank you
+    </div>

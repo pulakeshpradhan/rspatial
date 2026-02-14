@@ -323,6 +323,3 @@ cbar.set_label('Temperature in {}'.format(T_units))
 ```
 
 Notebook created by Prasun Kumar Gupta, Geoinformatics Department, Indian Institute of Remote Sensing (ISRO), Dehradun. Contact: prasun@iirs.gov.in
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qXsdgTGwqZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
