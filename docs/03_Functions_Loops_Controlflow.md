@@ -832,8 +832,3 @@ for city in elevation_cities_dictionary:
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_fbx9BH7qHQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-## Lecture Slides
-
-[Download Session4_Functions_Loops_Conditionals_Control Flow_in_ Python.pdf](pdfs/Session4_Functions_Loops_Conditionals_Control Flow_in_ Python.pdf)

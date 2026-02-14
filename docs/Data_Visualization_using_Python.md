@@ -326,8 +326,3 @@ Notebook created by Prasun Kumar Gupta, Geoinformatics Department, Indian Instit
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qXsdgTGwqZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-## Lecture Slides
-
-[Download Data viz using Python-slides.pdf](pdfs/Data viz using Python-slides.pdf)

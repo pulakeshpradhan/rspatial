@@ -3545,3 +3545,22 @@ gdf_Dams.to_file(Output_fp_Dams)
 ## Lecture Slides
 
 [Download Geospatial python Raster-slides.pdf](pdfs/Geospatial python Raster-slides.pdf)
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+## Lecture Slides
+
+[Download Geospatial python Raster-slides.pdf](pdfs/Geospatial python Raster-slides.pdf)
+
+
+## Lecture Slides
+
+[Download Geospatial python Raster-slides.pdf](pdfs/Geospatial python Raster-slides.pdf)
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vg-2ghjeL60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

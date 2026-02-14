@@ -1902,8 +1902,3 @@ Gauge_Discharge_data.to_excel('GD_data.xlsx',index = False)
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/URDTyIrD5Pg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-## Lecture Slides
-
-[Download Session7_Working_with_Pandas_1.pdf](pdfs/Session7_Working_with_Pandas_1.pdf)

@@ -2,9 +2,24 @@
 import os
 import shutil
 import difflib
+from pypdf import PdfReader
 
 def normalize(s):
     return s.lower().replace('_', ' ').replace('-', ' ').replace('.md', '').replace('.pdf', '')
+
+def extract_text_from_pdf(pdf_path):
+    try:
+        reader = PdfReader(pdf_path)
+        text = ""
+        for i, page in enumerate(reader.pages):
+            page_text = page.extract_text()
+            if page_text:
+                text += f"\n\n### Slide {i+1}\n\n"
+                text += page_text
+        return text
+    except Exception as e:
+        print(f"Error reading {pdf_path}: {e}")
+        return ""
 
 def add_pdfs():
     # 1. Create docs/pdfs directory
@@ -19,26 +34,22 @@ def add_pdfs():
         return
 
     pdf_files = [f for f in os.listdir(src_pdf_dir) if f.lower().endswith('.pdf')]
-    pdf_map = {} # filename -> full path in docs
-
+    pdf_files_map = {f: os.path.join(src_pdf_dir, f) for f in pdf_files}
+    
     for valid_pdf in pdf_files:
         shutil.copy(os.path.join(src_pdf_dir, valid_pdf), os.path.join(pdf_dir, valid_pdf))
-        pdf_map[valid_pdf] = f"pdfs/{valid_pdf}"
         print(f"Copied {valid_pdf}")
 
     # 3. List MD files
     md_files = [f for f in os.listdir('docs') if f.endswith('.md')]
 
     # 4. Map and Append
-    # Heuristic: longest common subsequence match or keyword match
-    
+    print("\nMatches and Extraction:")
     for md_file in md_files:
         if md_file == 'index.md': continue
         
-        best_match = None
-        best_ratio = 0.0
-        
         md_norm = normalize(md_file)
+        
         # Remove leading numbers from md (e.g. 01 basic...)
         parts = md_norm.split(' ', 1)
         if len(parts) > 1 and parts[0].isdigit():
@@ -46,39 +57,20 @@ def add_pdfs():
         else:
             md_core = md_norm
 
-        for pdf_file in pdf_files:
-            pdf_norm = normalize(pdf_file)
-            
-            # Simple keyword match first
-            # e.g. "numpy" in "working with numpy"
-            # We use SequenceMatcher on the normalized strings
-            ratio = difflib.SequenceMatcher(None, md_core, pdf_norm).ratio()
-            
-            # Boost if "session" number matches?
-            # Creating a robust mapping is hard. Let's rely on ratio.
-            
-            if ratio > best_match_ratio(best_ratio):
-                 best_ratio = ratio
-                 best_match = pdf_file
-
-        # Check for specific strong keywords if ratio is low?
-        # Actually let's just use a threshold
-        if best_match and best_ratio > 0.3: # 0.3 is low but might work for "panda" vs "pandas"
-             # Refine: Check if Key words are present
-             # e.g. "numpy" in md and "numpy" in pdf
-             pass
-             
-    # Better approach: Iterate MD and finding the BEST pdf.
-    # Printing matches for verification
-    print("\nMatches:")
-    for md_file in md_files:
-        md_norm = normalize(md_file)
         best_pdf = None
         best_score = 0
         
         for pdf in pdf_files:
             pdf_norm = normalize(pdf)
-            score = difflib.SequenceMatcher(None, md_norm, pdf_norm).ratio()
+            score = difflib.SequenceMatcher(None, md_core, pdf_norm).ratio()
+            
+            # Boost score if words match significantly
+            md_words = set(md_core.split())
+            pdf_words = set(pdf_norm.split())
+            common = md_words.intersection(pdf_words)
+            if len(common) >= 2:
+                score += 0.2
+            
             if score > best_score:
                 best_score = score
                 best_pdf = pdf
@@ -86,18 +78,23 @@ def add_pdfs():
         if best_score > 0.4: # Threshold
             print(f"{md_file} -> {best_pdf} ({best_score:.2f})")
             
-            # Append to file
-            link_text = f"\n\n## Lecture Slides\n\n[Download {best_pdf}](pdfs/{best_pdf})\n"
-            # Optional: Extract text? 
-            #  Skipping text extraction for now to avoid messiness, just linking.
+            pdf_path = pdf_files_map[best_pdf]
+            extracted_text = extract_text_from_pdf(pdf_path)
+            
+            # Prepare content to append
+            append_content = f"\n\n## Lecture Slides Reference\n\n"
+            append_content += f"[Download Slides PDF](pdfs/{best_pdf}){{ .md-button }}\n\n"
+            
+            if extracted_text:
+                append_content += "### Extracted Slide Content\n"
+                append_content += "!!! note \"Note: Text automatically extracted from slides\"\n"
+                append_content += "    The following text is extracted from the presentation slides and may require formatting adjustments.\n\n"
+                append_content += extracted_text
             
             with open(os.path.join('docs', md_file), 'a', encoding='utf-8') as f:
-                f.write(link_text)
+                f.write(append_content)
         else:
             print(f"{md_file} -> No match found (Best: {best_pdf} {best_score:.2f})")
-
-def best_match_ratio(curr):
-    return curr
 
 if __name__ == '__main__':
     add_pdfs()
