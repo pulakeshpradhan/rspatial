@@ -1,7 +1,7 @@
 
 # Coding Muscle with R Geospatial
 
-Welcome to **Coding Muscle with R Geospatial**. This comprehensive learning resource is vetted by the **National Water Academy (NWA)** and designed to bridge the gap between traditional GIS workflows and modern, programmatic geospatial analysis using the R programming language.
+Welcome to **Coding Muscle with R Geospatial**. This comprehensive learning resource is designed to bridge the gap between traditional GIS workflows and modern, programmatic geospatial analysis using the R programming language.
 
 ## Foundation: Data Science Stack
 
@@ -80,7 +80,7 @@ plot(r)
 
 <div class="card">
   <div class="card-icon-wrapper">
-    <img src="https://tidyverse.tidyverse.org/logo.png" alt="Time Series">
+    <img src="https://tidyverse.tidyverse.tidyverse.org/logo.png" alt="Time Series">
   </div>
   <h3>Time Series</h3>
   <p class="subtitle"><strong>tsibble & lubridate</strong></p>
@@ -112,7 +112,3 @@ data <- content(res, "parsed")
 </div>
 
 </div>
-
-## Acknowledgement
-
-We define our sincere gratitude to **National Water Academy (NWA), Pune** for providing the content, expertise, and resources that made this tutorial possible.
