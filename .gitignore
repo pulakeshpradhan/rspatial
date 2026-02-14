@@ -15,3 +15,5 @@ data/Reservoir_Level_Storage.xlsx
 nir.tif
 *.tif
 *.nc
+
+site/

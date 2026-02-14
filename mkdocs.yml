@@ -1,0 +1,24 @@
+site_name: GeoPython Tutorial
+theme:
+  name: material
+nav:
+- Home: index.md
+- 01 Basic Data types: 01_Basic_Data_types.md
+- 02 Data Structures in Python: 02_Data_Structures_in_Python.md
+- 03 Functions Loops Controlflow: 03_Functions_Loops_Controlflow.md
+- 04 OOP Error and File handling: 04_OOP_Error_and_File_handling.md
+- 05 Working with Pandas Part I: 05_Working_with_Pandas_Part_I.md
+- 06 Working with Pandas Part II: 06_Working_with_Pandas_Part_II.md
+- 07 Geospatial Analysis Vector Data: 07_Geospatial_Analysis_Vector_Data.md
+- 09 Working with Numpy: 09_Working_with_Numpy.md
+- 10 Time Series Analysis Part I: 10_Time_Series_Analysis_Part_I.md
+- 11 Time Series Analysis Part II: 11_Time_Series_Analysis_Part_II.md
+- Data Visualization using Python: Data_Visualization_using_Python.md
+- Geospatial Analysis Working with Raster Data: Geospatial_Analysis_Working_with_Raster_Data.md
+- NWA Cloud based Geospatial data processing: NWA_Cloud_based_Geospatial_data_processing.md
+- OpenWeatherMapAPI: OpenWeatherMapAPI.md
+- Open Meteo WEB API: Open_Meteo_WEB_API.md
+- Prediction: Prediction.md
+- Web Scraping web Table: Web_Scraping_web_Table.md
+plugins:
+- search
