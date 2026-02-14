@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/OpenWeatherMapAPI.ipynb)
+
 ```python
 import requests
 
@@ -90,6 +92,3 @@ print ("Temperaure: ", data["main"]["temp"])
 ```python
 
 ```
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/njfa48cIM9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

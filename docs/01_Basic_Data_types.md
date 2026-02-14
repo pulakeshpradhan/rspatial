@@ -1,1147 +1,142 @@
-# Basic Data Types
 
-## Strings
+# Basic Data Types in R
 
+## Characters (Strings)
 
-```python
-x = '2'
+In R, strings are called "characters".
+
+```r
+x <- '2'
 ```
 
-
-```python
-type(x)
+```r
+class(x)
 ```
 
+[1] "character"
 
-
-
-    str
-
-
-
-
-```python
-y ="Hello World"
+```r
+y <- "Hello World"
 ```
 
-
-```python
-type(y)
-
+```r
+class(y)
 ```
 
+[1] "character"
 
+### String Length
 
+Unlike Python's `len()`, R uses `nchar()` for the number of characters in a string.
 
-    str
-
-
-
-
-```python
-z = 'They've come long way'
+```r
+nchar("Hello World")
 ```
 
+[1] 11
 
-      File "C:\Users\COMP109\AppData\Local\Temp/ipykernel_8816/1277197612.py", line 1
-        z = 'They've come long way'
-                  ^
-    SyntaxError: invalid syntax
-    
+### String Indexing
 
+R is **1-indexed**. To get a substring, use `substr()`.
 
-
-```python
-# Use double quotations if there is a single quotation within the string
-zz = "They've come long way"
+```r
+# Get the first character
+substr(y, 1, 1)
 ```
 
+[1] "H"
 
-```python
-# Descriptive variable names are prefered
-Name_of_rainfall_station = 'Pune'
+```r
+# Get characters from 7 to 11
+substr(y, 7, 11)
 ```
 
+[1] "World"
 
-```python
-# Multi line string
-"Central Water Commission is a premier Technical Organization of India in the field of Water Resources
-and is presently functioning as an attached office of the Ministry of Jal Shakti, Department of 
-Water Resources, River Development and Ganga Rejuvenation, Government of India."
-```
+### String Concatenation
 
+R uses `paste()` or `paste0()` for concatenation.
 
-      File "C:\Users\COMP109\AppData\Local\Temp/ipykernel_8816/3541219196.py", line 2
-        "Central Water Commission is a premier Technical Organization of India in the field of Water Resources
-                                                                                                              ^
-    SyntaxError: EOL while scanning string literal
-    
-
-
-
-```python
-paragraph = '''Central Water Commission is a premier Technical Organization of India in the field of Water Resources
-and is presently functioning as an attached office of the Ministry of Jal Shakti, Department of 
-Water Resources, River Development and Ganga Rejuvenation, Government of India.'''
-```
-
-
-```python
-paragraph
-```
-
-
-
-
-    'Central Water Commission is a premier Technical Organization of India in the field of Water Resources\nand is presently functioning as an attached office of the Ministry of Jal Shakti, Department of \nWater Resources, River Development and Ganga Rejuvenation, Government of India.'
-
-
-
-
-```python
-b = "Central Water Commission is a premier Technical Organization of India in the field of Water Resources\
-and is presently functioning as an attached office of the Ministry of Jal Shakti, Department of\
-Water Resources, River Development and Ganga Rejuvenation, Government of India."
-```
-
-
-```python
-len("Hello World")
-```
-
-
-
-
-    11
-
-
-
-#### String Indexing
-
-
-```python
-y
-```
-
-
-
-
-    'Hello World'
-
-
-
-
-```python
-y[0]
-```
-
-
-
-
-    'H'
-
-
-
-
-```python
-y[len(y)]
-```
-
-
-    ---------------------------------------------------------------------------
-
-    IndexError                                Traceback (most recent call last)
-
-    ~\AppData\Local\Temp/ipykernel_8816/3552869512.py in <module>
-    ----> 1 y[len(y)]
-    
-
-    IndexError: string index out of range
-
-
-
-```python
-y[len(y)-1]
-```
-
-
-
-
-    'd'
-
-
-
-
-```python
-y[-1]
-```
-
-
-
-
-    'd'
-
-
-
-#### String Concatenation
-
-
-```python
-first_name = 'Madhya'
-```
-
-
-```python
-last_name = 'Pradesh'
-```
-
-
-```python
-full_name = first_name + last_name
-```
-
-
-```python
+```r
+first_name <- 'Madhya'
+last_name <- 'Pradesh'
+full_name <- paste(first_name, last_name)
 full_name
 ```
 
+[1] "Madhya Pradesh"
 
+## Numeric and Integer
 
+R handles numbers as `numeric` (double precision) by default.
 
-    'MadhyaPradesh'
-
-
-
-
-```python
-full_name = first_name + ' ' + last_name
+```r
+a <- 2
+class(a)
 ```
 
+[1] "numeric"
 
-```python
-full_name
+```r
+# Explicit integer
+b <- 2L
+class(b)
 ```
 
+[1] "integer"
 
+### Type Conversion
 
-
-    'Madhya Pradesh'
-
-
-
-#### String Slicing
-
-
-```python
-substrng1 = full_name[7] + full_name[8] + full_name[9]
+```r
+x <- "2"
+as.numeric(x)
 ```
 
+[1] 2
 
-```python
-substrng1
+```r
+as.character(2.5)
 ```
 
+[1] "2.5"
 
+## Logical (Booleans)
 
+R uses `TRUE` and `FALSE` (or `T` and `F`).
 
-    'Pra'
-
-
-
-
-```python
-print(full_name[7:9])
+```r
+is_water <- TRUE
+class(is_water)
 ```
 
-    Pr
-    
+[1] "logical"
 
+## Character Methods
 
-```python
-substrng2 = full_name[7:10]
+R has several built-in functions for string manipulation.
+
+```r
+toupper("hello")
 ```
 
+[1] "HELLO"
 
-```python
-print(substrng2)
+```r
+tolower("WORLD")
 ```
 
-    Pra
-    
+[1] "world"
 
-
-```python
-y[0:]
+```r
+# Trim whitespace
+trimws("   Pune   ")
 ```
 
+[1] "Pune"
 
-
-
-    'Hello World'
-
-
-
-
-```python
-y[:10]
+```r
+# Replace
+gsub("Jal Shakti", "Jalshakti", "Ministry of Jal Shakti")
 ```
 
-
-
-
-    'Hello Worl'
-
-
-
-
-```python
-y[:]
-```
-
-
-
-
-    'Hello World'
-
-
-
-
-```python
-y[:-1]
-```
-
-
-
-
-    'Hello Worl'
-
-
-
-
-```python
-y[-5:]
-```
-
-
-
-
-    'World'
-
-
-
-
-```python
-a = 2
-b ='2'
-```
-
-
-```python
-print(a)
-print(b)
-```
-
-    2
-    2
-    
-
-
-```python
-a == b
-```
-
-
-
-
-    False
-
-
-
-
-```python
-y
-```
-
-
-
-
-    'Hello World'
-
-
-
-
-```python
-#Strings are immutable and can't be altered
-y[0]= 'h'
-```
-
-
-    ---------------------------------------------------------------------------
-
-    TypeError                                 Traceback (most recent call last)
-
-    ~\AppData\Local\Temp/ipykernel_8816/532274940.py in <module>
-          1 #Strings are immutable and can't be altered
-    ----> 2 y[0]= 'h'
-    
-
-    TypeError: 'str' object does not support item assignment
-
-
-
-```python
-yy = 'h' + y[1:]
-```
-
-
-```python
-yy
-```
-
-
-
-
-    'hello World'
-
-
-
-#### String Methods
-
-###### Use tab completion in notebook to explore more string methods
-
-
-```python
-yy.upper()
-```
-
-
-
-
-    'HELLO WORLD'
-
-
-
-
-```python
-full_name
-```
-
-
-
-
-    'Madhya Pradesh'
-
-
-
-
-```python
-full_name.lower()
-```
-
-
-
-
-    'madhya pradesh'
-
-
-
-
-```python
-c ='   Pune'
-```
-
-
-```python
-c.lstrip()
-```
-
-
-
-
-    'Pune'
-
-
-
-
-```python
-'Pune   '.rstrip()
-```
-
-
-
-
-    'Pune'
-
-
-
-
-```python
-'   Pune   '.strip()
-```
-
-
-
-
-    'Pune'
-
-
-
-
-```python
-full_name.startswith('ma')
-```
-
-
-
-
-    False
-
-
-
-
-```python
-full_name.startswith("Ma")
-```
-
-
-
-
-    True
-
-
-
-
-```python
-full_name.endswith('sh')
-```
-
-
-
-
-    True
-
-
-
-
-```python
-help(len)
-```
-
-    Help on built-in function len in module builtins:
-    
-    len(obj, /)
-        Return the number of items in a container.
-    
-    
-
-
-```python
-x = '2'
-```
-
-
-```python
-#convert string to integer
-int(x)
-```
-
-
-
-
-    2
-
-
-
-
-```python
-#convert integer to a string
-str(2)
-```
-
-
-
-
-    '2'
-
-
-
-
-```python
-#convert float to a string
-str(2.5)
-```
-
-
-
-
-    '2.5'
-
-
-
-
-```python
-float(x)
-```
-
-
-
-
-    2.0
-
-
-
-
-```python
-float(2)
-```
-
-
-
-
-    2.0
-
-
-
-
-```python
-int(2.56)
-```
-
-
-
-
-    2
-
-
-
-
-```python
-# + operation between two strings results in string concatenation 
-x + x
-```
-
-
-
-
-    '22'
-
-
-
-
-```python
-int(x)+int(x)
-```
-
-
-
-
-    4
-
-
-
-
-```python
-x * 3
-```
-
-
-
-
-    '222'
-
-
-
-
-```python
-d = input('enter an integer : ')
-```
-
-    enter an integer : 
-    
-
-
-```python
-d
-```
-
-
-
-
-    ''
-
-
-
-
-```python
-int(d)
-```
-
-
-    ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    ~\AppData\Local\Temp/ipykernel_8816/2949999978.py in <module>
-    ----> 1 int(d)
-    
-
-    ValueError: invalid literal for int() with base 10: ''
-
-
-
-```python
-d = input('enter an integer : ')
-e = input('enter second integer : ')
-f = int(d)*int(e)
-f
-```
-
-    enter an integer : 
-    enter second integer : 
-    
-
-
-    ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    ~\AppData\Local\Temp/ipykernel_8816/3165118068.py in <module>
-          1 d = input('enter an integer : ')
-          2 e = input('enter second integer : ')
-    ----> 3 f = int(d)*int(e)
-          4 f
-    
-
-    ValueError: invalid literal for int() with base 10: ''
-
-
-#### f strings
-
-
-```python
-# It is possible to recall the value of any variable from a previous executed cell
-d
-```
-
-
-
-
-    ''
-
-
-
-
-```python
-e
-```
-
-
-
-
-    ''
-
-
-
-
-```python
-# fstrings are used to insert value of any type of variable at places of choice within a string
-f"{d} times {e} is {f}"
-```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    ~\AppData\Local\Temp/ipykernel_8816/904092031.py in <module>
-          1 # fstrings are used to insert value of any type of variable at places of choice within a string
-    ----> 2 f"{d} times {e} is {f}"
-    
-
-    NameError: name 'f' is not defined
-
-
-
-```python
-paragraph
-```
-
-
-
-
-    'Central Water Commission is a premier Technical Organization of India in the field of Water Resources\nand is presently functioning as an attached office of the Ministry of Jal Shakti, Department of \nWater Resources, River Development and Ganga Rejuvenation, Government of India.'
-
-
-
-
-```python
-# string method 'find' returns the starting index of the substring in its first incidence
-paragraph.find('Commission')
-```
-
-
-
-
-    14
-
-
-
-
-```python
-paragraph.replace("Jal Shakti","Jalshakti")
-```
-
-
-
-
-    'Central Water Commission is a premier Technical Organization of India in the field of Water Resources\nand is presently functioning as an attached office of the Ministry of Jalshakti, Department of \nWater Resources, River Development and Ganga Rejuvenation, Government of India.'
-
-
-
-## Basic numerical data types - Integers & Floats 
-
-
-```python
-#Exponential notation of float with positive exponent
-
-1e3
-```
-
-
-
-
-    1000.0
-
-
-
-
-```python
-#Exponential notation of float with negative exponent
-
-1e-3
-```
-
-
-
-
-    0.001
-
-
-
-
-```python
-# Representation of large integers. Commas are not allowed
-
-100_000_000
-```
-
-
-
-
-    100000000
-
-
-
-
-```python
-# any operation between an integer and float will yield a float
-
-g = 5 + 2.0
-g
-```
-
-
-
-
-    7.0
-
-
-
-
-```python
-type(g)
-```
-
-
-
-
-    float
-
-
-
-
-```python
-h = 5 + 2 
-h
-```
-
-
-
-
-    7
-
-
-
-
-```python
-type(h)
-```
-
-
-
-
-    int
-
-
-
-
-```python
-5.0/2
-```
-
-
-
-
-    2.5
-
-
-
-
-```python
-#Integer Division
-
-5.0//2
-```
-
-
-
-
-    2.0
-
-
-
-
-```python
-#Modulus operation 
-
-5 % 3
-```
-
-
-
-
-    2
-
-
-
-
-```python
-#Exponential function
-2 ** 2
-```
-
-
-
-
-    4
-
-
-
-#### Boolean Data Type
-
-
-```python
-g == h
-```
-
-
-
-
-    True
-
-
-
-
-```python
-g != h
-```
-
-
-
-
-    False
-
-
-
-
-## Lecture Visualization
-
-<embed src="pdfs/Session2_Basic Data Types in Python.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
-
-<p align="center"><a href="pdfs/Session2_Basic Data Types in Python.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
-
-??? info "View Full Lecture Transcript"
-    The following content is extracted from the lecture slides.
-
-    Jupyter
-
-    Notebooks &
-
-    Basic Data Types in
-
-    Python
-
-    Chaitanya K S
-
-    Deputy Director
-
-    National Water Academy
-
-    Central Water Commission, Pune
-
-    Anaconda Navigator
-
-    • Anaconda Navigator is a desktop graphical user interface (GUI) included in
-
-    Anaconda® distribution that allows you to launch applications and easily
-
-    manage conda packages, environments, and channels without using command-
-
-    line commands.
-
-    https://docs.anaconda.com/anaconda/navigator/
-
-    • On Windows, the installer will create a Start menu shortcut for Navigator.
-
-    • Or from the start menu, search for and open Anaconda prompt and type the
-
-    command anaconda-navigator
-
-    IPython and Jupyter Notebook
-
-    • Python Interpreter executes one line at a time
-
-    • Script files saved with .py extension can be executed by them calling in Python
-
-    interpreter
-
-    • Python Interpreter can’t cater to data analysis and scientific computing
-
-    • IPython project was initiated in 2001 to enhance the utility of Python Interpreter
-
-    • Additional features in Ipython include tab autocompletion, get help etc.,
-
-    • Jupyter Notebook evolved from Ipython web note book
-
-    • The Jupyter Notebook is a web application for creating and sharing documents
-
-    that contain code, visualizations, and text.
-
-    ▪ Language of choice
-
-    ▪ Share notebooks
-
-    ▪ Interactive output
-
-    ▪ Big data integration
-
-    • JupyterLab is a web-based interactive development environment for notebooks,
-
-    code, and data. Its flexible interface allows users to configure and arrange
-
-    workflows in data science, scientific computing, computational journalism, and
-
-    machine learning.
-
-    https://jupyter .org/
-
-    Thank you
-
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iDWyJcB1FMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-## Lecture Visualization
-
-<embed src="pdfs/Session2_Basic Data Types in Python.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
-
-<p align="center"><a href="pdfs/Session2_Basic Data Types in Python.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
-
-??? info "View Full Lecture Transcript"
-    The following content is extracted from the lecture slides.
-
-    Jupyter
-
-    Notebooks &
-
-    Basic Data Types in
-
-    Python
-
-    Chaitanya K S
-
-    Deputy Director
-
-    National Water Academy
-
-    Central Water Commission, Pune
-
-    Anaconda Navigator
-
-    • Anaconda Navigator is a desktop graphical user interface (GUI) included in
-
-    Anaconda® distribution that allows you to launch applications and easily
-
-    manage conda packages, environments, and channels without using command-
-
-    line commands.
-
-    https://docs.anaconda.com/anaconda/navigator/
-
-    • On Windows, the installer will create a Start menu shortcut for Navigator.
-
-    • Or from the start menu, search for and open Anaconda prompt and type the
-
-    command anaconda-navigator
-
-    IPython and Jupyter Notebook
-
-    • Python Interpreter executes one line at a time
-
-    • Script files saved with .py extension can be executed by them calling in Python
-
-    interpreter
-
-    • Python Interpreter can’t cater to data analysis and scientific computing
-
-    • IPython project was initiated in 2001 to enhance the utility of Python Interpreter
-
-    • Additional features in Ipython include tab autocompletion, get help etc.,
-
-    • Jupyter Notebook evolved from Ipython web note book
-
-    • The Jupyter Notebook is a web application for creating and sharing documents
-
-    that contain code, visualizations, and text.
-
-    ▪ Language of choice
-
-    ▪ Share notebooks
-
-    ▪ Interactive output
-
-    ▪ Big data integration
-
-    • JupyterLab is a web-based interactive development environment for notebooks,
-
-    code, and data. Its flexible interface allows users to configure and arrange
-
-    workflows in data science, scientific computing, computational journalism, and
-
-    machine learning.
-
-    https://jupyter .org/
-
-    Thank you
-
+[1] "Ministry of Jalshakti"

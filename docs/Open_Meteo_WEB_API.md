@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/Open_Meteo_WEB_API.ipynb)
+
 ```python
 import requests
 url = "https://api.open-meteo.com/v1/forecast"

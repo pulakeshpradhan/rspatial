@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/NWA_Cloud_based_Geospatial_data_processing.ipynb)
+
 # Cloud based Geospatial Data Processing
 
 Prasun Kumar Gupta (IIRS/ISRO)
@@ -41,7 +43,8 @@ First step is to install the required packages.
     Requirement already satisfied: rpds-py>=0.7.1 in /usr/local/lib/python3.12/dist-packages (from jsonschema~=4.18->pystac[validation]>=1.10.0->pystac_client) (0.27.1)
     Requirement already satisfied: typing-extensions>=4.4.0 in /usr/local/lib/python3.12/dist-packages (from referencing>=0.28.4->jsonschema~=4.18->pystac[validation]>=1.10.0->pystac_client) (4.15.0)
     Downloading pystac_client-0.9.0-py3-none-any.whl (41 kB)
-    [?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/41.8 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m41.8/41.8 kB[0m [31m2.4 MB/s[0m eta [36m0:00:00[0m
+    [?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/41.8 kB[0m [31m?[0m eta [36m-:--:--[0m
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m41.8/41.8 kB[0m [31m2.4 MB/s[0m eta [36m0:00:00[0m
     [?25hDownloading pystac-1.14.1-py3-none-any.whl (207 kB)
     [2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m207.7/207.7 kB[0m [31m12.1 MB/s[0m eta [36m0:00:00[0m
     [?25hInstalling collected packages: pystac, pystac_client
@@ -905,6 +908,3 @@ plt.show()
 ![png](NWA_Cloud_based_Geospatial_data_processing_files/NWA_Cloud_based_Geospatial_data_processing_44_0.png)
     
 
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iqPzPXMox0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

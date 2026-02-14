@@ -1,42 +1,43 @@
 
-# Coding Muscle with GeoPython
+# Coding Muscle with R Geospatial
 
-Welcome to **Coding Muscle with GeoPython**. This comprehensive learning resource is vetted by the **National Water Academy (NWA)** and designed to bridge the gap between traditional GIS workflows and modern, programmatic geospatial analysis.
+Welcome to **Coding Muscle with R Geospatial**. This comprehensive learning resource is vetted by the **National Water Academy (NWA)** and designed to bridge the gap between traditional GIS workflows and modern, programmatic geospatial analysis using the R programming language.
 
 ## Foundation: Data Science Stack
 
-Before diving into maps, we master the core tools that power modern data science.
+Before diving into maps, we master the core tools that power modern data science in R.
 
-* <a href="https://numpy.org/" target="_blank"><img src="https://numpy.org/images/logo.svg" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 15px;" alt="NumPy"></a> **NumPy** ("The Math Engine")
+* <a href="https://www.r-project.org/" target="_blank"><img src="https://www.r-project.org/logo/Rlogo.svg" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 15px;" alt="R"></a> **Base R** ("The Foundation")
 
-    Python lists are slow for millions of numbers. NumPy makes math instant. It handles the heavy lifting for all other data packages.
+    R is built for statistics. Its vectors and matrices are native, making mathematical operations intuitive and fast.
 
-    ```python
-    import numpy as np
-    # Create an array and calculate mean
-    data = np.array([1, 2, 3, 4, 5])
-    print(data.mean())
+    ```r
+    # Create a vector and calculate mean
+    data <- c(1, 2, 3, 4, 5)
+    mean(data)
     ```
 
-* <a href="https://pandas.pydata.org/" target="_blank"><img src="https://pandas.pydata.org/static/img/pandas.svg" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 15px;" alt="Pandas"></a> **Pandas** ("The Super Spreadsheet")
+* <a href="https://www.tidyverse.org/" target="_blank"><img src="https://tidyverse.tidyverse.org/logo.png" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 15px;" alt="Tidyverse"></a> **Tidyverse** ("The Data Engine")
 
-    Imagine Excel, but programmable and capable of handling millions of rows in seconds. Pandas lets you filter, sort, and analyze tabular data with ease.
+    A collection of R packages designed for data science. Packages like `dplyr` and `tidyr` let you filter, sort, and analyze tabular data with a readable syntax.
 
-    ```python
-    import pandas as pd
-    # Read a CSV file
-    df = pd.read_csv("data.csv")
-    print(df.head())
+    ```r
+    library(dplyr)
+    # Read and filter data
+    df <- read.csv("data.csv") %>%
+      filter(value > 10) %>%
+      head()
     ```
 
-* <a href="https://matplotlib.org/" target="_blank"><img src="https://matplotlib.org/stable/_static/logo2.svg" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 15px;" alt="Matplotlib"></a> **Matplotlib** ("The Artists")
+* <a href="https://ggplot2.tidyverse.org/" target="_blank"><img src="https://ggplot2.tidyverse.org/logo.png" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 15px;" alt="ggplot2"></a> **ggplot2** ("The Grammar of Graphics")
 
-    These libraries turn your numbers into visual stories—line charts, bar graphs, heatmaps, and more.
+    A powerful system for creating elegant data visualizations based on the Grammar of Graphics.
 
-    ```python
-    import matplotlib.pyplot as plt
-    plt.plot([1, 2, 3], [4, 5, 6])
-    plt.show()
+    ```r
+    library(ggplot2)
+    ggplot(mtcars, aes(x=wt, y=mpg)) + 
+      geom_point() + 
+      geom_smooth()
     ```
 
 ## Applied Geospatial Modules
@@ -47,66 +48,65 @@ Once the foundation is set, we apply these skills to specialized geospatial doma
 
 <div class="card">
   <div class="card-icon-wrapper">
-    <img src="https://geopandas.org/en/stable/_static/geopandas_logo_web.svg" alt="Vector Data">
+    <img src="https://r-spatial.github.io/sf/reference/figures/logo.png" alt="Vector Data">
   </div>
   <h3>Vector Analysis</h3>
-  <p class="subtitle"><strong>GeoPandas</strong></p>
-  <p>Master the manipulation of geometric data (Points, Lines, Polygons).</p>
+  <p class="subtitle"><strong>sf (Simple Features)</strong></p>
+  <p>Master the manipulation of geometric data using tidy principles.</p>
 
-```python
-import geopandas as gpd
-gdf = gpd.read_file("map.shp")
-gdf.plot()
+```r
+library(sf)
+nc <- st_read(system.file("shape/nc.shp", package="sf"))
+plot(st_geometry(nc))
 ```
 
 </div>
 
 <div class="card">
   <div class="card-icon-wrapper">
-    <img src="https://avatars.githubusercontent.com/u/46967650?v=4" alt="Raster Data">
+    <img src="https://rspatial.github.io/terra/reference/figures/logo.png" alt="Raster Data">
   </div>
   <h3>Raster Processing</h3>
-  <p class="subtitle"><strong>Rasterio & Xarray</strong></p>
+  <p class="subtitle"><strong>terra & stars</strong></p>
   <p>Unlock the power of pixel-based data (Satellite imagery, DEMs).</p>
 
-```python
-import rasterio
-import matplotlib.pyplot as plt
-src = rasterio.open("image.tif")
-plt.imshow(src.read(1))
-plt.show()
+```r
+library(terra)
+r <- rast("image.tif")
+plot(r)
 ```
 
 </div>
 
 <div class="card">
   <div class="card-icon-wrapper">
-    <img src="https://pandas.pydata.org/static/img/pandas.svg" alt="Time Series">
+    <img src="https://tidyverse.tidyverse.org/logo.png" alt="Time Series">
   </div>
   <h3>Time Series</h3>
-  <p class="subtitle"><strong>Advanced Pandas</strong></p>
+  <p class="subtitle"><strong>tsibble & lubridate</strong></p>
   <p>Handle temporal data with precision for meteorological trends.</p>
 
-```python
-df['date'] = pd.to_datetime(df['date'])
-df.set_index('date', inplace=True)
-df.resample('M').mean()
+```r
+library(lubridate)
+df$date <- ymd(df$date_string)
+# Monthly aggregate
+df %>% group_by(month = month(date)) %>% summarize(mean(val))
 ```
 
 </div>
 
 <div class="card">
   <div class="card-icon-wrapper">
-    <img src="https://jupyter.org/assets/homepage/main-logo.svg" alt="Cloud & Web API">
+    <img src="https://www.r-project.org/logo/Rlogo.svg" alt="Cloud & Web API">
   </div>
   <h3>Web APIs & Cloud</h3>
-  <p class="subtitle"><strong>Jupyter & APIs</strong></p>
+  <p class="subtitle"><strong>httr & jsonlite</strong></p>
   <p>Connect to live APIs like OpenWeatherMap.</p>
 
-```python
-import requests
-res = requests.get(api_url)
-data = res.json()
+```r
+library(httr)
+res <- GET(api_url)
+data <- content(res, "parsed")
 ```
 
 </div>

@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/Web_Scraping_web_Table.ipynb)
+
 # Web Scraping Web Table using Python
 ---
 This Jupyter Notebook demonstrates how to extract tabular data from a **Web page** using Python libraries `requests`, `BeautifulSoup` and `pandas`.

@@ -1,0 +1,1550 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Web_Scraping_web_Table/">
+      
+      
+        <link rel="next" href="../11_Time_Series_Analysis_Part_II/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>10 Time Series Analysis Part I - Geo Coding Muscle with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#time-series-data-handling-and-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Geo Coding Muscle with Python" class="md-header__button md-logo" aria-label="Geo Coding Muscle with Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Geo Coding Muscle with Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10 Time Series Analysis Part I
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01_Basic_Data_types/" class="md-tabs__link">
+          
+  
+  
+  Python Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../09_Working_with_Numpy/" class="md-tabs__link">
+          
+  
+  
+  Data Science Core
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Time Series Analysis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-tabs__link">
+          
+  
+  
+  Geospatial Analysis & Cloud
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Geo Coding Muscle with Python" class="md-nav__button md-logo" aria-label="Geo Coding Muscle with Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Geo Coding Muscle with Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Basic_Data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Basic Data types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Data_Structures_in_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Data Structures in Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_Functions_Loops_Controlflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Functions Loops Controlflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_OOP_Error_and_File_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 OOP Error and File handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Science Core
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Science Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_Working_with_Numpy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Working with Numpy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_Working_with_Pandas_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Working with Pandas Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_Working_with_Pandas_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Working with Pandas Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Visualization_using_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization using Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Scraping web Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Series Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Time Series Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Time Series Analysis Part I
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Time Series Analysis Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Time Series Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Time Series Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-dates-and-times-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Dates and Times in Python
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Dates and Times in Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learn-more-about-strptime-httpswwwgeeksforgeeksorgpython-datetime-strptime-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learn more about strptime https://www.geeksforgeeks.org/python-datetime-strptime-function/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-manipulating-time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating and Manipulating Time Series Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating and Manipulating Time Series Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-a-time-series-data-from-csv-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading a time series data from CSV file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resampling-and-aggregating-time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resampling and Aggregating Time Series Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series-indexing-and-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Series Indexing and Slicing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lecture Visualization
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Time Series Analysis Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis & Cloud
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geospatial Analysis & Cloud
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Geospatial Analysis Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenWeatherMapAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMapAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Meteo WEB API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWA Cloud based Geospatial data processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="time-series-data-handling-and-analysis">Time Series Data Handling and Analysis</h1>
+<h2 id="introduction-to-time-series-data">Introduction to Time Series Data</h2>
+<p>Time series data is a sequence of data points recorded at specific time intervals. In hydrology, this could include rainfall data, river discharge data, soil moisture, ET etc.</p>
+<h3 id="key-concepts">Key Concepts:</h3>
+<ul>
+<li><strong>Temporal ordering</strong>: Time series data is ordered in time.</li>
+<li><strong>Frequency</strong>: The time interval between data points (e.g., daily, monthly).</li>
+<li><strong>Trends and seasonality</strong>: Long-term increase or decrease and regular patterns that repeat over time.</li>
+</ul>
+<h2 id="working-with-dates-and-times-in-python">Working with Dates and Times in Python</h2>
+<p>Python's <code>datetime</code> module and <code>pandas</code> library provide powerful tools for working with date and time data.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example of creating a datetime object</span>
+<span class="n">date_str</span> <span class="o">=</span> <span class="s1">&#39;2024-12-14&#39;</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">date_str</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convert String object to datetime object</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">date_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_str</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">date_obj</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">date_obj</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="learn-more-about-strptime-httpswwwgeeksforgeeksorgpython-datetime-strptime-function">Learn more about strptime https://www.geeksforgeeks.org/python-datetime-strptime-function/</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Understading the format</span>
+<span class="n">date1</span> <span class="o">=</span> <span class="s1">&#39;09-11-2001&#39;</span> <span class="c1"># MM-DD-YYYY</span>
+<span class="n">date2</span> <span class="o">=</span> <span class="s1">&#39;09-11-2001&#39;</span> <span class="c1"># DD-MM-YYYY</span>
+
+<span class="n">date3</span> <span class="o">=</span> <span class="s2">&quot;09-NOV-2001&quot;</span>
+<span class="n">date4</span> <span class="o">=</span> <span class="s2">&quot;09/NOV/2001&quot;</span>
+<span class="n">date5</span> <span class="o">=</span> <span class="s2">&quot;09/NOV/2001 15:30:00&quot;</span>
+
+
+<span class="n">date1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span> <span class="s1">&#39;%m-</span><span class="si">%d</span><span class="s1">-%Y&#39;</span><span class="p">)</span>
+<span class="n">date2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">-%m-%Y&#39;</span><span class="p">)</span>
+<span class="n">date3</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date3</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%b-%Y&quot;</span><span class="p">)</span>
+<span class="n">date4</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date4</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">/%b/%Y&quot;</span><span class="p">)</span>
+<span class="n">date5</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date5</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">/%b/%Y %H:%M:%S&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">date1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">date2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">date3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">date4</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">date5</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="creating-and-manipulating-time-series-data">Creating and Manipulating Time Series Data</h2>
+<p>Pandas makes it easy to create and manipulate time series data. Let's start by creating a simple time series of daily rainfall data.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating a date range with daily frequecny </span>
+<span class="n">date_range</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2024-12-31&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="c1"># Creating a time series with random rainfall data</span>
+<span class="n">rainfall_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">date_range</span><span class="p">))</span>
+<span class="n">rainfall_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">rainfall_data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">date_range</span><span class="p">)</span>
+<span class="n">rainfall_series</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Plotting the data series</span>
+<span class="n">rainfall_series</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="reading-a-time-series-data-from-csv-file">Reading a time series data from CSV file</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Read the CSV file</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:\NIH\Training\Python for water\Slides\Day-4\TRMM_3H_2000_2018_Delhi_1.csv&#39;</span>
+<span class="n">rainfall_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">rainfall_data</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="n">rainfall_data</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Converting colomn type to datetime object</span>
+
+<span class="n">rainfall_data</span><span class="p">[</span><span class="s1">&#39;Dates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">rainfall_data</span><span class="p">[</span><span class="s1">&#39;Dates&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">rainfall_data</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="n">rainfall_data</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">rainfall_data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># To plot the data change the date colomn as index colomn</span>
+<span class="n">rainfall_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Dates&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">rainfall_data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="resampling-and-aggregating-time-series-data">Resampling and Aggregating Time Series Data</h2>
+<p>Resampling involves changing the frequency of your time series observations. Common resampling operations include downsampling (reducing frequency) and upsampling (increasing frequency).
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Resampling the 3 Houlry data rainfall data to daily and monthly sums</span>
+
+<span class="n">daily_rainfall</span> <span class="o">=</span> <span class="n">rainfall_data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">monthly_rainfall</span> <span class="o">=</span> <span class="n">rainfall_data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">monthly_rainfall</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">monthly_rainfall</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="time-series-indexing-and-slicing">Time Series Indexing and Slicing</h2>
+<p>Datetime indexing: Allows selecting data by specifying dates.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Slicing Year-wise: All values for the year 2015</span>
+<span class="n">monthly_rainfall_2015</span> <span class="o">=</span> <span class="n">monthly_rainfall</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015&#39;</span><span class="p">]</span>
+<span class="n">monthly_rainfall_2015</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Slicing Month-wise: From June 2015 to September 2015</span>
+<span class="n">df_june_sept_2015</span> <span class="o">=</span> <span class="n">monthly_rainfall</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015-06&#39;</span><span class="p">:</span><span class="s1">&#39;2015-09&#39;</span><span class="p">]</span>
+<span class="n">df_june_sept_2015</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Slicing Month-wise: All January values</span>
+<span class="n">df_jan_all_years</span> <span class="o">=</span> <span class="n">monthly_rainfall</span><span class="p">[</span><span class="n">monthly_rainfall</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">df_jan_all_years</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Extracting all June to sept values</span>
+<span class="n">monsoon_rainfall</span> <span class="o">=</span> <span class="n">monthly_rainfall</span><span class="p">[</span><span class="n">monthly_rainfall</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])]</span>
+<span class="n">monsoon_rainfall</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Slicing Date-wise: From 01-01-2003 to 14-10-2005</span>
+<span class="n">df_specific_dates</span> <span class="o">=</span> <span class="n">monthly_rainfall</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2003-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2005-10-14&#39;</span><span class="p">]</span>
+<span class="n">df_specific_dates</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Datetime properties: Extract year, month, day, etc., which can be useful for feature engineering.</span>
+
+<span class="n">daily_rainfall</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">daily_rainfall</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="n">daily_rainfall</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">daily_rainfall</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span>
+<span class="n">daily_rainfall</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">daily_rainfall</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span>
+<span class="n">daily_rainfall</span><span class="p">[</span><span class="s1">&#39;day_of_week&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">daily_rainfall</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dayofweek</span>
+
+<span class="n">daily_rainfall</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Delete the index colomn</span>
+
+<span class="n">daily_rainfall</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">daily_rainfall</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create date colomn and convert it into datetime format</span>
+<span class="n">daily_rainfall</span><span class="p">[</span><span class="s1">&#39;dates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">daily_rainfall</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="s1">&#39;day&#39;</span><span class="p">]])</span>
+
+<span class="c1"># Make the date colomn as index colomn</span>
+<span class="n">daily_rainfall</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;dates&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">daily_rainfall</span>
+</code></pre></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vHaJttWUCNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="lecture-visualization">Lecture Visualization</h2>
+<p><embed src="pdfs/Time Series in Python.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" /></p>
+<p align="center"><a href="pdfs/Time Series in Python.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
+
+<details class="info">
+<summary>View Full Lecture Transcript</summary>
+<p>The following content is extracted from the lecture slides.</p>
+<p>Time Series Analysis</p>
+<p>using Python</p>
+<p>Sukant Jain,</p>
+<p>Scientist C</p>
+<p>National Institute of Hydrology,</p>
+<p>Roorkee</p>
+<p>sukant.nihr@gov.in</p>
+<p>Gridded Format for Storing Climate Data</p>
+<p>What is Gridded Data?</p>
+<p>Definition</p>
+<p>Gridded data organizes</p>
+<p>spatial and temporal</p>
+<p>information into a</p>
+<p>structured grid, where</p>
+<p>each cell represents a</p>
+<p>specific location or time</p>
+<p>interval.</p>
+<p>Structure</p>
+<p>Each cell in the grid</p>
+<p>contains data values</p>
+<p>such as temperature,</p>
+<p>precipitation, or wind</p>
+<p>speed, providing a</p>
+<p>comprehensive</p>
+<p>representation of</p>
+<p>environmental</p>
+<p>conditions.</p>
+<p>Applications</p>
+<p>Gridded data is widely</p>
+<p>used in climate</p>
+<p>modeling, weather</p>
+<p>forecasting, and</p>
+<p>environmental</p>
+<p>monitoring, providing</p>
+<p>valuable insights into</p>
+<p>climate change and its</p>
+<p>impacts.</p>
+<p>What is Gridded Data?</p>
+<p>Efficiency of Gridded Data Storage</p>
+<p>CSV Files</p>
+<p>CSV files are simple and easy to use, but they suffer from data redundancy,</p>
+<p>large file sizes, and slow access times, making them inefficient for storing</p>
+<p>large datasets.</p>
+<p>Gridded Data Formats</p>
+<p>Gridded data formats are designed for efficient storage, reducing redundancy</p>
+<p>and enabling faster access times. They are well-suited for handling massive</p>
+<p>datasets.</p>
+<p>Advantages</p>
+<p>Gridded data formats provide improved data organization, efficient storage,</p>
+<p>reduced redundancy, and enhanced accessibility, making them ideal for large-</p>
+<p>scale climate data analysis.</p>
+<p>Disadvantages</p>
+<p>Specialized software is required to access and manipulate data in gridded</p>
+<p>formats, necessitating specific skills and tools for efficient utilization.</p>
+<p>Different Formats of Gridded Data</p>
+<p>• NetCDF (Network Common Data Form) is widely used in climate and meteorological</p>
+<p>data, supporting large, multi-dimensional arrays of data.</p>
+<p>• HDF5 (Hierarchical Data Format) is a flexible and self-describing format that is well-</p>
+<p>suited for storing complex data hierarchies.</p>
+<p>• GRIB (GRIdded Binary) is a widely used format for storing meteorological data. It is</p>
+<p>standardized by the WMO</p>
+<p>• GeoTIFF (Geographic Tagged Image File Format) is a standard format for storing</p>
+<p>georeferenced raster data. It supports a wide range of spatial data types, including</p>
+<p>elevation, land cover, and precipitation.</p>
+<p>Tools for Extracting Data from Gridded Formats</p>
+<p>Type Tools Description</p>
+<p>Python Libraries netCDF4, h5py, xarray Python libraries provide functionalities for reading</p>
+<p>and writing NetCDF, HDF5, and other gridded data</p>
+<p>formats.</p>
+<p>Command Line Tools ncdump, h5dump,</p>
+<p>cdo</p>
+<p>Command line tools offer efficient ways to extract</p>
+<p>data from gridded formats, convert data between</p>
+<p>formats, and perform basic data manipulations.</p>
+<p>Software Applications Panoply, ArcGIS, QGIS Specialized software applications provide interactive</p>
+<p>environments for visualizing, analyzing, and</p>
+<p>manipulating gridded data.</p>
+<p>Cloud Computing</p>
+<p>Platform</p>
+<p>Google Earth Engine Very easy to play around the gridded data hosted in</p>
+<p>that platform</p>
+<p>PYTHON PACKAGE</p>
+<p>A Python package or module is a collection of Python code, such as functions and classes, organized to perform</p>
+<p>specific tasks or solve problems efficiently.</p>
+<p>• xarray: Provides data structures for multi-dimensional arrays, enabling efficient manipulation and analysis of</p>
+<p>labeled data.</p>
+<p>• pandas: Offers powerful data structures like DataFrames for data manipulation and analysis, making it a staple</p>
+<p>for data science.</p>
+<p>• numpy: Provides support for large, multi-dimensional arrays and matrices, along with a collection of</p>
+<p>mathematical functions to operate on them.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

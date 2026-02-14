@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/Prediction.ipynb)
+
 ```python
 # Import necessary libraries
 import pandas as pd  # For reading and working with data
