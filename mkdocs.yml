@@ -24,10 +24,10 @@ nav:
   - 03 Functions Loops Controlflow: 03_Functions_Loops_Controlflow.md
   - 04 OOP Error and File handling: 04_OOP_Error_and_File_handling.md
 - ':material-chart-bar: Data Science Core':
-  - 09 Working with Matrices & Vectors: 09_Working_with_Numpy.md
-  - 05 Working with Tidyverse Part I: 05_Working_with_Pandas_Part_I.md
-  - 06 Working with Tidyverse Part II: 06_Working_with_Pandas_Part_II.md
-  - Data Visualization using ggplot2: Data_Visualization_using_Python.md
+  - 09 Working with Matrices & Vectors: 09_Working_with_Matrices_Vectors.md
+  - 05 Working with Tidyverse Part I: 05_Working_with_Tidyverse_Part_I.md
+  - 06 Working with Tidyverse Part II: 06_Working_with_Tidyverse_Part_II.md
+  - Data Visualization using ggplot2: Data_Visualization_using_ggplot2.md
   - Web Scraping web Table: Web_Scraping_web_Table.md
 - ':material-clock-outline: Time Series Analysis':
   - 10 Time Series Analysis Part I: 10_Time_Series_Analysis_Part_I.md
