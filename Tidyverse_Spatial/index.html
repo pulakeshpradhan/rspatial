@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../01_Basic_Data_types/">
+        <link rel="prev" href="../02_Data_Structures_in_R/">
       
       
-        <link rel="next" href="../Tidyverse_Spatial/">
+        <link rel="next" href="../Vector_Analysis_sf/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Data Structures - Coding Muscle with R Geospatial</title>
+        <title>Tidyverse for Spatial - Coding Muscle with R Geospatial</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-structures-in-r" class="md-skip">
+        <a href="#tidyverse-for-spatial-data" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Structures
+              Tidyverse for Spatial
             
           </span>
         </div>
@@ -218,12 +218,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../01_Basic_Data_types/" class="md-tabs__link">
           
   
@@ -240,11 +238,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../Tidyverse_Spatial/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -322,31 +322,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -364,7 +359,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -407,6 +402,98 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Data_Structures_in_R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    :material-chart-bar: Spatial Data Science
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    :material-chart-bar: Spatial Data Science
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -426,7 +513,7 @@
   <span class="md-ellipsis">
     
   
-    Data Structures
+    Tidyverse for Spatial
   
 
     
@@ -444,7 +531,7 @@
   <span class="md-ellipsis">
     
   
-    Data Structures
+    Tidyverse for Spatial
   
 
     
@@ -470,10 +557,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vectors" class="md-nav__link">
+  <a href="#using-dplyr-with-sf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vectors
+        Using dplyr with sf
       
     </span>
   </a>
@@ -481,10 +568,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lists" class="md-nav__link">
+  <a href="#data-summarization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lists
+        Data Summarization
       
     </span>
   </a>
@@ -492,32 +579,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-frames" class="md-nav__link">
+  <a href="#visualization-with-ggplot2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Frames
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matrices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Matrices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#factors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Factors
+        Visualization with ggplot2
       
     </span>
   </a>
@@ -528,93 +593,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    :material-chart-bar: Spatial Data Science
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    :material-chart-bar: Spatial Data Science
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Tidyverse_Spatial/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tidyverse for Spatial
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -700,40 +678,34 @@
 
 
 
-<h1 id="data-structures-in-r">Data Structures in R</h1>
-<h2 id="vectors">Vectors</h2>
-<p>Vectors are the most basic data structure in R. They must contain elements of the same type.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Atomic vector</span>
-<span class="n">rain</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">rain</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Tue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Wed&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Thu&quot;</span><span class="p">)</span>
-<span class="n">rain</span>
+<h1 id="tidyverse-for-spatial-data">Tidyverse for Spatial Data</h1>
+<p>The Tidyverse approach makes data cleaning and preparation intuitive, even for spatial attributes.</p>
+<h2 id="using-dplyr-with-sf">Using dplyr with sf</h2>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">nc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="nf">system.file</span><span class="p">(</span><span class="s">&quot;shape/nc.shp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="o">=</span><span class="s">&quot;sf&quot;</span><span class="p">))</span>
+
+<span class="c1"># Filter counties with more than 10,000 births</span>
+<span class="n">large_counties</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nc</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">filter</span><span class="p">(</span><span class="n">BIR74</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">10000</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">select</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span><span class="w"> </span><span class="n">BIR74</span><span class="p">,</span><span class="w"> </span><span class="n">geometry</span><span class="p">)</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">large_counties</span><span class="p">[</span><span class="s">&quot;BIR74&quot;</span><span class="p">])</span>
 </code></pre></div>
-<h2 id="lists">Lists</h2>
-<p>Lists can contain elements of different types, including other lists.</p>
-<div class="highlight"><pre><span></span><code><span class="n">station_info</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Pune&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="n">coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">18.52</span><span class="p">,</span><span class="w"> </span><span class="m">73.85</span><span class="p">),</span>
-<span class="w">  </span><span class="n">active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
-<span class="p">)</span>
-<span class="n">station_info</span><span class="o">$</span><span class="n">name</span>
+<h2 id="data-summarization">Data Summarization</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Calculate total births by geometry (if grouped)</span>
+<span class="n">nc</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">summarize</span><span class="p">(</span><span class="n">Total_Births</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">BIR74</span><span class="p">))</span>
 </code></pre></div>
-<h2 id="data-frames">Data Frames</h2>
-<p>Data frames are the standard for tabular data in R. They are like a list of vectors of equal length.</p>
-<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
-<span class="w">  </span><span class="n">station</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Pune&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mumbai&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Delhi&quot;</span><span class="p">),</span>
-<span class="w">  </span><span class="n">rainfall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">250</span><span class="p">,</span><span class="w"> </span><span class="m">80</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="matrices">Matrices</h2>
-<p>Matrices are two-dimensional arrays where all elements must be of the same type.</p>
-<div class="highlight"><pre><span></span><code><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
-<span class="n">m</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="c1"># Row 1, Col 2</span>
-</code></pre></div>
-<h2 id="factors">Factors</h2>
-<p>Factors are used to represent categorical data.</p>
-<div class="highlight"><pre><span></span><code><span class="n">land_use</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Urban&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Forest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Water&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Urban&quot;</span><span class="p">))</span>
-<span class="nf">levels</span><span class="p">(</span><span class="n">land_use</span><span class="p">)</span>
+<h2 id="visualization-with-ggplot2">Visualization with ggplot2</h2>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nc</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_sf</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BIR74</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_fill_viridis_c</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Birth Statistics&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;North Carolina 1974&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 

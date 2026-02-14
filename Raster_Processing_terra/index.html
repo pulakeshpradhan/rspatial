@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../Geospatial_Analysis_Working_with_Raster_Data/">
+        <link rel="prev" href="../Vector_Analysis_sf/">
       
-      
-        <link rel="next" href="../Open_Meteo_WEB_API/">
       
       
         
@@ -23,7 +21,7 @@
     
     
       
-        <title>OpenWeatherMapAPI - Coding Muscle with R Geospatial</title>
+        <title>Raster Processing (terra) - Coding Muscle with R Geospatial</title>
       
     
     
@@ -73,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#raster-processing-with-r-terra" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenWeatherMapAPI
+              Raster Processing (terra)
             
           </span>
         </div>
@@ -233,57 +236,17 @@
   
   
   
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../09_Working_with_Matrices_Vectors/" class="md-tabs__link">
-          
-  
-  
-  :material-chart-bar: Data Science Core
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../10_Time_Series_Analysis_Part_I/" class="md-tabs__link">
-          
-  
-  
-  :material-clock-outline: Time Series Analysis
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
     
   
   
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-tabs__link">
+        <a href="../Tidyverse_Spatial/" class="md-tabs__link">
           
   
   
-  :material-map-outline: Geospatial Analysis & Cloud
+  :material-chart-bar: Spatial Data Science
 
         </a>
       </li>
@@ -419,7 +382,7 @@
   <span class="md-ellipsis">
     
   
-    01 Basic Data types
+    Basic Data types
   
 
     
@@ -447,377 +410,7 @@
   <span class="md-ellipsis">
     
   
-    02 Data Structures in R
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_Functions_Loops_Controlflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    03 Functions Loops Controlflow
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04_OOP_Error_and_File_handling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    04 OOP Error and File handling
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    :material-chart-bar: Data Science Core
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    :material-chart-bar: Data Science Core
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09_Working_with_Matrices_Vectors/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    09 Working with Matrices & Vectors
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05_Working_with_Tidyverse_Part_I/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    05 Working with Tidyverse Part I
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06_Working_with_Tidyverse_Part_II/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    06 Working with Tidyverse Part II
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Data_Visualization_using_ggplot2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Data Visualization using ggplot2
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Web Scraping web Table
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    :material-clock-outline: Time Series Analysis
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    :material-clock-outline: Time Series Analysis
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10_Time_Series_Analysis_Part_I/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    10 Time Series Analysis Part I
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    11 Time Series Analysis Part II
+    Data Structures
   
 
     
@@ -863,17 +456,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    :material-map-outline: Geospatial Analysis & Cloud
+    :material-chart-bar: Spatial Data Science
   
 
     
@@ -884,12 +477,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    :material-map-outline: Geospatial Analysis & Cloud
+    :material-chart-bar: Spatial Data Science
   
 
           </label>
@@ -902,14 +495,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+      <a href="../Tidyverse_Spatial/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    07 Geospatial Analysis Vector Data
+    Tidyverse for Spatial
   
 
     
@@ -930,14 +523,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
+      <a href="../Vector_Analysis_sf/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Geospatial Analysis Working with Raster Data
+    Vector Analysis (sf)
   
 
     
@@ -964,6 +557,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster Processing (terra)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -972,7 +585,7 @@
   <span class="md-ellipsis">
     
   
-    OpenWeatherMapAPI
+    Raster Processing (terra)
   
 
     
@@ -982,90 +595,58 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
         
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  <span class="md-ellipsis">
+  
     
   
-    Open Meteo WEB API
   
-
-    
-  </span>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loading-and-visualizing-rasters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading and Visualizing Rasters
+      
+    </span>
+  </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raster-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raster Algebra
+      
+    </span>
+  </a>
   
-
-      </a>
-    </li>
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop-and-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crop and Mask
+      
+    </span>
+  </a>
   
-
-              
-            
-              
-                
+</li>
+      
+    </ul>
   
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NWA Cloud based Geospatial data processing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Prediction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
+</nav>
+      
     </li>
   
 
@@ -1095,79 +676,34 @@
 
 
 
-  <h1>OpenWeatherMapAPI</h1>
+<h1 id="raster-processing-with-r-terra">Raster Processing with R (terra)</h1>
+<p>The <code>terra</code> package is the successor to the older <code>raster</code> package, providing faster performance for gridded spatial data.</p>
+<h2 id="loading-and-visualizing-rasters">Loading and Visualizing Rasters</h2>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">terra</span><span class="p">)</span>
 
-<p><a href="https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/OpenWeatherMapAPI.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="c1"># Create a sample raster</span>
+<span class="n">r</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rast</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">ncols</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">xmin</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">xmax</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">ymin</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">ymax</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
+<span class="nf">values</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">100</span>
 
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;lat&quot;</span><span class="p">:</span><span class="mf">28.62</span><span class="p">,</span>
-    <span class="s2">&quot;lon&quot;</span><span class="p">:</span><span class="mf">77.2</span><span class="p">,</span>
-    <span class="s2">&quot;appid&quot;</span><span class="p">:</span><span class="s2">&quot;26ea0a994f700ae86a2e74cf1a39b5ce&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;units&quot;</span><span class="p">:</span><span class="s2">&quot;metric&quot;</span>
-
-<span class="p">}</span>
-<span class="c1">#url = &quot;https://api.openweathermap.org/data/2.5/weather?lat={lat}&amp;lon={lon}&amp;appid={API key}&quot;</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.openweathermap.org/data/2.5/weather&quot;</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-<span class="n">response</span>
+<span class="c1"># Plotting</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;Simple Raster&quot;</span><span class="p">)</span>
 </code></pre></div>
-<pre><code>&lt;Response [200]&gt;
-</code></pre>
-<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">data</span>
+<h2 id="raster-algebra">Raster Algebra</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Multi-band operations</span>
+<span class="n">r2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
+<span class="n">r_sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r2</span>
+
+<span class="c1"># Thresholding</span>
+<span class="n">mask</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">50</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
 </code></pre></div>
-<pre><code>{'coord': {'lon': 77.2, 'lat': 28.62},
- 'weather': [{'id': 721,
-   'main': 'Haze',
-   'description': 'haze',
-   'icon': '50d'}],
- 'base': 'stations',
- 'main': {'temp': 30.03,
-  'feels_like': 29.4,
-  'temp_min': 30.03,
-  'temp_max': 30.03,
-  'pressure': 1011,
-  'humidity': 37,
-  'sea_level': 1011,
-  'grnd_level': 985},
- 'visibility': 3500,
- 'wind': {'speed': 2.06, 'deg': 240},
- 'clouds': {'all': 20},
- 'dt': 1760510172,
- 'sys': {'type': 1,
-  'id': 9165,
-  'country': 'IN',
-  'sunrise': 1760489503,
-  'sunset': 1760530918},
- 'timezone': 19800,
- 'id': 1260877,
- 'name': 'Parliament House, Delhi',
- 'cod': 200}
-</code></pre>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<h2 id="crop-and-mask">Crop and Mask</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define an extent</span>
+<span class="n">e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ext</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
 
-<span class="n">timezone_offset</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;timezone&#39;</span><span class="p">]</span>
-<span class="n">localtime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span><span class="o">+</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">timezone_offset</span><span class="p">)</span>
-<span class="n">date_str</span> <span class="o">=</span> <span class="n">localtime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">time_str</span> <span class="o">=</span> <span class="n">localtime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Date: &quot;</span><span class="p">,</span> <span class="n">date_str</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Time: &quot;</span><span class="p">,</span> <span class="n">time_str</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Location: &quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Temperaure: &quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;main&quot;</span><span class="p">][</span><span class="s2">&quot;temp&quot;</span><span class="p">])</span>
-</code></pre></div>
-<pre><code>Date:  2025-10-15
-Time:  12:06:12
-Location:  Parliament House, Delhi
-Temperaure:  30.03
-
-
-C:\Users\sukan\AppData\Local\Temp\ipykernel_30060\3680212285.py:4: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
-  localtime = datetime.utcfromtimestamp(data['dt'])+timedelta(seconds=timezone_offset)
-</code></pre>
-<div class="highlight"><pre><span></span><code>
+<span class="c1"># Crop raster</span>
+<span class="n">r_cropped</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">crop</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">r_cropped</span><span class="p">)</span>
 </code></pre></div>
 
 
