@@ -13023,3 +13023,87 @@ with open(fp_GD_data, mode ='r', encoding ='utf-8-sig') as f:
 
     Thank you
 
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OgJGIBbDUfI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+## Lecture Visualization
+
+<embed src="pdfs/session5_Error_and_File_Handling_in_Python.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+
+<p align="center"><a href="pdfs/session5_Error_and_File_Handling_in_Python.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
+
+??? info "View Full Lecture Transcript"
+    The following content is extracted from the lecture slides.
+
+    File & Error Handling
+
+    in Python
+
+    Chaitanya K S
+
+    Deputy Director
+
+    National Water Academy
+
+    Central Water Commission, Pune
+
+    OOP in Python
+
+    • OOP approach is more useful when the code becomes more
+
+    complex with more data and functions. Related data and functions
+
+    can be grouped together in a logical manner
+
+    • Classes allow user defined data structures
+
+    • Everything in Python is an Object. Class is the blueprint for defining
+
+    any Object
+
+    • Object is an instance of the Class with real data. Methods are
+
+    functions defined inside the Class and they define the behaviour
+
+    and actions that an Object can perform with its data
+
+    • Classes provide a means of bundling data and functionality
+
+    together. Creating a new class creates a new type of object,
+
+    allowing new instances of that type to be made. Each class instance
+
+    can have attributes attached to it for maintaining its state. Class
+
+    instances can also have methods (defined by its class) for modifying
+
+    its state. https://docs.python.org/3/tutorial/index.html
+
+    Error Handling in Python
+
+    • Three types of errors
+
+    ▪ Syntax errors
+
+    ▪ Runtime errors
+
+    ▪ Logic errors
+
+    • Syntax errors are easy to find and rectify
+
+    • Runtime errors create an exception, and the execution of the
+
+    program stops
+
+    • Runtime errors can be rectified by reading error messages and
+
+    looking at the traceback.
+
+    • Logic errors cause unexpected behaviours called bugs. Removing
+
+    bugs is called debugging
+
+    Thank you
+

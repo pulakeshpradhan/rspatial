@@ -52,11 +52,13 @@ Once the foundation is set, we apply these skills to specialized geospatial doma
   <h3>Vector Analysis</h3>
   <p><strong>GeoPandas</strong></p>
   <p>Master the manipulation of geometric data (Points, Lines, Polygons).</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">import geopandas as gpd
+
+```python
+import geopandas as gpd
 gdf = gpd.read_file("map.shp")
-gdf.plot()</code></pre>
-  </div>
+gdf.plot()
+```
+
 </div>
 
 <div class="card">
@@ -66,11 +68,13 @@ gdf.plot()</code></pre>
   <h3>Raster Processing</h3>
   <p><strong>Rasterio & Xarray</strong></p>
   <p>Unlock the power of pixel-based data (Satellite imagery, DEMs).</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">import rasterio
+
+```python
+import rasterio
 src = rasterio.open("image.tif")
-print(src.meta)</code></pre>
-  </div>
+print(src.meta)
+```
+
 </div>
 
 <div class="card">
@@ -80,11 +84,13 @@ print(src.meta)</code></pre>
   <h3>Time Series</h3>
   <p><strong>Advanced Pandas</strong></p>
   <p>Handle temporal data with precision for meteorological trends.</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">df['date'] = pd.to_datetime(df['date'])
+
+```python
+df['date'] = pd.to_datetime(df['date'])
 df.set_index('date', inplace=True)
-df.resample('M').mean()</code></pre>
-  </div>
+df.resample('M').mean()
+```
+
 </div>
 
 <div class="card">
@@ -94,11 +100,13 @@ df.resample('M').mean()</code></pre>
   <h3>Web APIs & Cloud</h3>
   <p><strong>Jupyter & APIs</strong></p>
   <p>Connect to live APIs like OpenWeatherMap.</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">import requests
+
+```python
+import requests
 res = requests.get(api_url)
-data = res.json()</code></pre>
-  </div>
+data = res.json()
+```
+
 </div>
 
 </div>

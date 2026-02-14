@@ -891,3 +891,65 @@ for city in elevation_cities_dictionary:
 
     Thank you
 
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_fbx9BH7qHQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+## Lecture Visualization
+
+<embed src="pdfs/Session4_Functions_Loops_Conditionals_Control Flow_in_ Python.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+
+<p align="center"><a href="pdfs/Session4_Functions_Loops_Conditionals_Control Flow_in_ Python.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
+
+??? info "View Full Lecture Transcript"
+    The following content is extracted from the lecture slides.
+
+    Functions, Loops &
+
+    Control Flow in Python
+
+    Chaitanya K S
+
+    Deputy Director
+
+    National Water Academy
+
+    Central Water Commission, Pune
+
+    Functions in Python
+
+    • Functions are building blocks of any programming language.
+
+    • Functions are meant for undertaking specific tasks and they make
+
+    the code efficient, organised and maintainable by reusing part of
+
+    the code.
+
+    • Functions come very handy when the code undertakes repetitive
+
+    tasks
+
+    • Built-in functions vs User defined functions
+
+    • Structure of a user defined function
+
+    def function_name (parameter1, parameter2…) :
+
+    expression1
+
+    ………………..
+
+    return value
+
+    • To call on a function we must pass on the arguments to the
+
+    parameters inside the parenthesis
+
+    • Variables defined within a function have local scope unless
+
+    specified by the keyword global
+
+    Thank you
+

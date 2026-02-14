@@ -86,7 +86,6 @@ object {
 
 .card img {
   height: 50px;
-  /* Reduced from 60px */
   width: auto;
   margin-bottom: 15px;
 }
@@ -101,7 +100,25 @@ object {
   font-size: 0.9em;
   line-height: 1.5;
   color: #555;
+  margin: 0 0 10px 0;
+  /* Add bottom margin for spacing before code block */
+}
+
+/* Optimize code blocks inside cards */
+.card .md-typeset__scrollwrap {
   margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.card .md-typeset pre>code {
+  font-size: 0.8em;
+  /* Slightly smaller font for cards */
+}
+
+.card .md-clipboard {
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 [data-md-color-scheme="slate"] .card {
