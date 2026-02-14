@@ -46,6 +46,3 @@ markdown_extensions:
 - pymdownx.details
 - pymdownx.superfences
 - pymdownx.emoji
-- pymdownx.emoji:
-    emoji_index: '!!python/name:pymdownx.emoji.twemoji'
-    emoji_generator: '!!python/name:pymdownx.emoji.to_svg'
