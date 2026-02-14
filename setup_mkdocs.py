@@ -71,10 +71,24 @@ def setup_mkdocs():
 
     # 5. Convert files
     print(f"Converting {len(files_to_convert)} notebooks...")
+    repo_url = "https://github.com/pulakeshpradhan/geopython"
     for fname in files_to_convert:
         cmd = ['jupyter', 'nbconvert', '--to', 'markdown', '--output-dir', 'docs', fname]
         print(f"Running: {' '.join(cmd)}")
         subprocess.run(cmd, check=True)
+        
+        # Add "Open in Colab" badge
+        md_file = os.path.join('docs', os.path.splitext(fname)[0] + '.md')
+        if os.path.exists(md_file):
+            colab_link = f"https://colab.research.google.com/github/pulakeshpradhan/geopython/blob/main/{fname}"
+            badge = f"[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]({colab_link})\n\n"
+            
+            with open(md_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            with open(md_file, 'w', encoding='utf-8') as f:
+                f.write(badge + content)
+            print(f"Added Colab badge to {md_file}")
 
     # 6. Generate mkdocs.yml with navigation
     # 6. Generate mkdocs.yml with navigation
