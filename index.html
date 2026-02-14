@@ -1169,7 +1169,7 @@
 <p>Before diving into maps, we master the core tools that power modern data science.</p>
 <ul>
 <li>
-<p><a href="https://numpy.org/" target="_blank"><img src="https://numpy.org/images/logo.svg" width="50" alt="NumPy" style="vertical-align: middle; margin-right: 10px;"></a> <strong>NumPy</strong> ("The Math Engine")</p>
+<p><a href="https://numpy.org/" target="_blank"><img src="https://numpy.org/images/logo.svg" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 10px;" alt="NumPy"></a> <strong>NumPy</strong> ("The Math Engine")</p>
 <p>Python lists are slow for millions of numbers. NumPy makes math instant. It handles the heavy lifting for all other data packages.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="c1"># Create an array and calculate mean</span>
@@ -1178,20 +1178,18 @@
 </code></pre></div>
 </li>
 <li>
-<p><a href="https://pandas.pydata.org/" target="_blank"><img src="https://pandas.pydata.org/static/img/pandas.svg" width="50" alt="Pandas" style="vertical-align: middle; margin-right: 10px;"></a> <strong>Pandas</strong> ("The Super Spreadsheet")</p>
+<p><a href="https://pandas.pydata.org/" target="_blank"><img src="https://pandas.pydata.org/static/img/pandas.svg" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 10px;" alt="Pandas"></a> <strong>Pandas</strong> ("The Super Spreadsheet")</p>
 <p>Imagine Excel, but programmable and capable of handling millions of rows in seconds. Pandas lets you filter, sort, and analyze tabular data with ease.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="c1"># Read a CSV file</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
-<span class="c1"># Show first 5 rows</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 </li>
 <li>
-<p><a href="https://matplotlib.org/" target="_blank"><img src="https://matplotlib.org/stable/_static/logo2.svg" width="50" alt="Matplotlib" style="vertical-align: middle; margin-right: 10px;"></a> <strong>Matplotlib</strong> ("The Artists")</p>
+<p><a href="https://matplotlib.org/" target="_blank"><img src="https://matplotlib.org/stable/_static/logo2.svg" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 10px;" alt="Matplotlib"></a> <strong>Matplotlib</strong> ("The Artists")</p>
 <p>These libraries turn your numbers into visual stories—line charts, bar graphs, heatmaps, and more.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="c1"># Plot a simple line chart</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
@@ -1202,7 +1200,9 @@
 <div class="grid-container">
 
 <div class="card">
-  <img src="https://geopandas.org/en/stable/_static/geopandas_logo_web.svg" alt="Vector Data">
+  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+    <img src="https://geopandas.org/en/stable/_static/geopandas_logo_web.svg" alt="Vector Data" style="max-height: 50px; max-width: 100%; width: auto;">
+  </div>
   <h3>Vector Analysis</h3>
   <p><strong>GeoPandas</strong></p>
   <p>Master the manipulation of geometric data (Points, Lines, Polygons).</p>
@@ -1214,7 +1214,9 @@ gdf.plot()</code></pre>
 </div>
 
 <div class="card">
-  <img src="https://avatars.githubusercontent.com/u/46967650?v=4" alt="Raster Data">
+  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+    <img src="https://avatars.githubusercontent.com/u/46967650?v=4" alt="Raster Data" style="max-height: 50px; max-width: 100%; width: auto;">
+  </div>
   <h3>Raster Processing</h3>
   <p><strong>Rasterio & Xarray</strong></p>
   <p>Unlock the power of pixel-based data (Satellite imagery, DEMs).</p>
@@ -1226,7 +1228,9 @@ print(src.meta)</code></pre>
 </div>
 
 <div class="card">
-  <img src="https://pandas.pydata.org/static/img/pandas.svg" alt="Time Series">
+  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+    <img src="https://pandas.pydata.org/static/img/pandas.svg" alt="Time Series" style="max-height: 50px; max-width: 100%; width: auto;">
+  </div>
   <h3>Time Series</h3>
   <p><strong>Advanced Pandas</strong></p>
   <p>Handle temporal data with precision for meteorological trends.</p>
@@ -1238,7 +1242,9 @@ df.resample('M').mean()</code></pre>
 </div>
 
 <div class="card">
-  <img src="https://jupyter.org/assets/homepage/main-logo.svg" alt="Cloud & Web API">
+  <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+    <img src="https://jupyter.org/assets/homepage/main-logo.svg" alt="Cloud & Web API" style="max-height: 50px; max-width: 100%; width: auto;">
+  </div>
   <h3>Web APIs & Cloud</h3>
   <p><strong>Jupyter & APIs</strong></p>
   <p>Connect to live APIs like OpenWeatherMap.</p>
