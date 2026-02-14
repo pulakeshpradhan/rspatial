@@ -93,7 +93,7 @@ def setup_mkdocs():
             nav.append({section: section_nav})
 
     mkdocs_config = {
-        'site_name': 'GeoPython Tutorial',
+        'site_name': 'Geo Coding Muscle with Python',
         'theme': {
             'name': 'material',
             'features': [

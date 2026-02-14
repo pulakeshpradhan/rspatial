@@ -1,5 +1,5 @@
 
-# GeoPython Tutorial
+# Geo Coding Muscle with Python
 
 Welcome to the **GeoPython Tutorial**. This comprehensive learning resource is vetted by the **National Water Academy (NWA)** and designed to bridge the gap between traditional GIS workflows and modern, programmatic geospatial analysis.
 
@@ -71,8 +71,11 @@ gdf.plot()
 
 ```python
 import rasterio
+import matplotlib.pyplot as plt
+
 src = rasterio.open("image.tif")
-print(src.meta)
+plt.imshow(src.read(1))
+plt.show()
 ```
 
 </div>

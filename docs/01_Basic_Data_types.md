@@ -974,9 +974,6 @@ g != h
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iDWyJcB1FMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
 ## Lecture Visualization
 
 <embed src="pdfs/Session2_Basic Data Types in Python.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
